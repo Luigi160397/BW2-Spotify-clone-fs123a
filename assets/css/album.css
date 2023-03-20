@@ -1,5 +1,16 @@
 #albumInfo {
   background: linear-gradient(180deg, rgba(230, 198, 82, 1) 0%, rgba(118, 102, 42, 1) 100%);
+  padding-bottom: 20rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+#albumContent {
+  background: rgb(18, 18, 18);
+  background: linear-gradient(180deg, rgba(18, 18, 18, 0.26213813161983546) 0%, rgba(18, 18, 18, 1) 38%);
+  top: -15em;
+  right: 0;
+  left: 0;
 }
 
 #cover {
@@ -20,4 +31,12 @@
   border: 0;
   background-color: transparent;
   fill: #cac7bc;
+}
+
+#clockIcon {
+  fill: #8f8e87;
+}
+
+.light-gray {
+  color: #a9a9a8;
 }
