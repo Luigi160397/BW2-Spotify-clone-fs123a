@@ -27,7 +27,8 @@
 }
 
 #favBtn,
-#moreBtn {
+#moreBtn,
+#downloadBtn {
   border: 0;
   background-color: transparent;
   fill: #cac7bc;
