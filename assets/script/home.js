@@ -1,4 +1,4 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q={query}";
+const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=salmo";
 
 window.onload = function () {
   richiesta(url);
@@ -14,6 +14,8 @@ const richiesta = url => {
       row2.innerHTML = "";
       const row3 = document.querySelector("#card-principale");
       row3.innerHTML = "";
+      const row4 = document.querySelector("#recenti");
+      row4.innerHTML = "";
       const canzoni = data.data;
       shuffle(canzoni);
       createCardPrincipale(canzoni[0].title, canzoni[0].artist.picture_medium, canzoni[0].artist.name);
@@ -23,7 +25,11 @@ const richiesta = url => {
       }
       for (let i = 6; i < 11; i++) {
         const canzone = canzoni[i];
-        createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name);
+        createCard("#cards2", canzone.title, canzone.artist.picture_medium, canzone.artist.name);
+      }
+      for (let i = 6; i < 11; i++) {
+        const canzone = canzoni[i];
+        createCard("#recenti", canzone.title, canzone.artist.picture_medium, canzone.artist.name);
       }
     })
     .catch(error => console.log(error));
@@ -54,8 +60,8 @@ const createCardPlaylist = (title, img) => {
   </div>`;
 };
 
-const createCard = (title, img, artist) => {
-  const row2 = document.querySelector("#cards2");
+const createCard = (row, title, img, artist) => {
+  const row2 = document.querySelector(`${row}`);
   const col2 = document.createElement("div");
   col2.setAttribute("class", "col");
   row2.appendChild(col2);
