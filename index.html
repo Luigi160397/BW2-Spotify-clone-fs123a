@@ -13,323 +13,348 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
   </head>
   <body>
-    <div class="container-fluid d-flex bg-dark px-0 py-1"></div>
-    <aside>
-      <button class="btn rounded-pill fw-bold text-light">
-        <i class="bi bi-three-dots text-secondary fs-3"></i>
-      </button>
-    </aside>
-    <div id="contenuto" class="container-fluid bg-dark px-5 py-4">
-      <nav style="top: 0; z-index: 9999" class="navbar bg-dark mb-4 position-sticky">
-        <div class="container-fluid justify-content-start px-0">
-          <a style="background-color: #131313; margin-right: 8px" class="text-light rounded-circle fs-3 px-2" href="#"
-            ><i class="bi bi-arrow-left-short"></i
-          ></a>
-          <a style="background-color: #131313" class="text-light rounded-circle fs-3 px-2" href="#"
-            ><i class="bi bi-arrow-right-short"></i
-          ></a>
+    <div class="container-fluid d-flex bg-dark px-0 py-1">
+      <aside style="height: 100%; width: 300px; position: fixed; z-index: 1; top: 0; left: 0">
+        <button class="btn rounded-pill fw-bold text-light">
+          <i class="bi bi-three-dots text-secondary fs-3"></i>
+        </button>
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+          <a href="#"><i class="bi bi-house-door-fill fs-4 text-decoration-none text-secondary"></i></a>
+          <a href="#" class="text-decoration-none text-secondary">Home</a>
         </div>
-      </nav>
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+          <a href="#"><i class="bi bi-search fs-4 text-decoration-none text-secondary"></i></a>
+          <a href="#" class="text-decoration-none text-secondary">Cerca</a>
+        </div>
+        <div class="d-flex align-items-center gap-2 ps-3 pb-5">
+          <a href="#"><i class="bi bi-collection-fill fs-4 text-decoration-none text-secondary"></i></a>
+          <a href="#" class="text-decoration-none text-secondary">La tua Libreria</a>
+        </div>
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+          <a href="#"><i class="bi bi-plus-square-fill fs-4 text-decoration-none text-secondary"></i></a>
+          <a href="#" class="text-decoration-none text-secondary">Crea playlist</a>
+        </div>
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+          <a href="#"><i class="bi bi-suit-heart-fill fs-4 text-decoration-none text-secondary"></i></a>
+          <a href="#" class="text-decoration-none text-secondary">Brani che ti piacciono</a>
+        </div>
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+          <a href="#"><i class="bi bi-bookmark-fill fs-4 text-decoration-none text-secondary"></i></a>
+          <a href="#" class="text-decoration-none text-secondary">I tuoi episodi</a>
+        </div>
+      </aside>
+      <div style="margin-left: 300px" id="contenuto" class="container-fluid bg-dark px-5 py-4 pt-0">
+        <nav style="top: 0; z-index: 9999" class="navbar bg-dark mb-4 position-sticky">
+          <div class="container-fluid justify-content-start px-0">
+            <a style="background-color: #131313; margin-right: 8px" class="text-light rounded-circle fs-3 px-2" href="#"
+              ><i class="bi bi-arrow-left-short"></i
+            ></a>
+            <a style="background-color: #131313" class="text-light rounded-circle fs-3 px-2" href="#"
+              ><i class="bi bi-arrow-right-short"></i
+            ></a>
+          </div>
+        </nav>
 
-      <div
-        style="
-          background: rgb(2, 0, 36);
-          background: linear-gradient(16deg, rgba(2, 0, 36, 1) 0%, rgba(33, 37, 41, 1) 63%);
-        "
-        class="card bg-black text-light rounded-0 border-0 px-3 py-3 mb-5"
-      >
-        <div class="row g-0">
-          <div class="col-2">
-            <img src="assets/imgs/main/image-11.jpg" class="img-fluid" alt="pic" />
-          </div>
-          <div class="col-6">
-            <div class="card-body">
-              <h6 class="card-title fw-bold">ALBUM</h6>
-              <h1 class="card-title fw-bold">VIOLA (feat. Salmo)</h1>
-              <p class="card-text fw-bold">Fedez, Salmo</p>
-              <p class="card-text fw-bold">Ascolta il nuovo singolo di Fedez e Salmo!</p>
-              <div class="d-flex gap-2">
-                <button style="background-color: #1ed760" class="btn px-4 py-2 rounded-pill fw-bold">Play</button>
-                <button
-                  style="background-color: #2125297c"
-                  class="btn px-4 py-2 rounded-pill fw-bold text-light border border-1 border-light"
-                >
-                  Salva
-                </button>
-                <button class="btn rounded-pill fw-bold text-light">
-                  <i class="bi bi-three-dots text-secondary fs-3"></i>
-                </button>
-              </div>
+        <div
+          style="
+            background: rgb(2, 0, 36);
+            background: linear-gradient(16deg, rgba(2, 0, 36, 1) 0%, rgba(33, 37, 41, 1) 63%);
+          "
+          class="card bg-black text-light rounded-0 border-0 px-3 py-3 mb-5"
+        >
+          <div class="row g-0">
+            <div class="col-2">
+              <img src="assets/imgs/main/image-11.jpg" class="img-fluid" alt="pic" />
             </div>
-          </div>
-        </div>
-      </div>
-      <p class="fw-bold fs-3 mb-3 text-light">Buonasera</p>
-      <div class="row row-cols-3 mb-5">
-        <div class="col">
-          <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
-            <div class="row g-0">
-              <div class="col-md-2">
-                <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
-              </div>
-              <div class="col-md-10">
-                <div class="card-body">
-                  <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
+            <div class="col-6">
+              <div class="card-body">
+                <h6 class="card-title fw-bold">ALBUM</h6>
+                <h1 class="card-title fw-bold">VIOLA (feat. Salmo)</h1>
+                <p class="card-text fw-bold">Fedez, Salmo</p>
+                <p class="card-text fw-bold">Ascolta il nuovo singolo di Fedez e Salmo!</p>
+                <div class="d-flex gap-2">
+                  <button style="background-color: #1ed760" class="btn px-4 py-2 rounded-pill fw-bold">Play</button>
+                  <button
+                    style="background-color: #2125297c"
+                    class="btn px-4 py-2 rounded-pill fw-bold text-light border border-1 border-light"
+                  >
+                    Salva
+                  </button>
+                  <button class="btn rounded-pill fw-bold text-light">
+                    <i class="bi bi-three-dots text-secondary fs-3"></i>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
-            <div class="row g-0">
-              <div class="col-md-2">
-                <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+        <p class="fw-bold fs-3 mb-3 text-light">Buonasera</p>
+        <div class="row row-cols-3 mb-5">
+          <div class="col">
+            <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-10">
-                <div class="card-body">
-                  <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
-            <div class="row g-0">
-              <div class="col-md-2">
-                <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
-              </div>
-              <div class="col-md-10">
-                <div class="card-body">
-                  <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="container-fluid d-flex justify-content-between px-0 mb-3">
+          <p class="fw-bold fs-4 mb-3 text-light">Altro di ciò che ti piace</p>
+          <a class="text-secondary text-decoration-none" href="#"><small>VISUALIZZA TUTTO</small></a>
         </div>
-        <div class="col">
-          <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
-            <div class="row g-0">
-              <div class="col-md-2">
-                <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 mb-5 row-gap-3">
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
               </div>
-              <div class="col-md-10">
-                <div class="card-body">
-                  <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
-                </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
-            <div class="row g-0">
-              <div class="col-md-2">
-                <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
               </div>
-              <div class="col-md-10">
-                <div class="card-body">
-                  <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
-                </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
-            <div class="row g-0">
-              <div class="col-md-2">
-                <img src="assets/imgs/main/image-10.jpg" class="img-fluid rounded-start" alt="pic" />
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
               </div>
-              <div class="col-md-10">
-                <div class="card-body">
-                  <h5 class="card-text fw-bold fs-6 pt-3">Titolo playlist</h5>
-                </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="container-fluid d-flex justify-content-between px-0 mb-3">
-        <p class="fw-bold fs-4 mb-3 text-light">Altro di ciò che ti piace</p>
-        <a class="text-secondary text-decoration-none" href="#"><small>VISUALIZZA TUTTO</small></a>
-      </div>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 mb-5 row-gap-3">
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
             </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
+          </div>
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
+        <div class="container-fluid d-flex justify-content-between px-0 mb-3">
+          <p class="fw-bold fs-4 mb-3 text-light">Ascoltate di recente</p>
+          <a class="text-secondary text-decoration-none" href="#"><small>VISUALIZZA TUTTO</small></a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 mb-5 row-gap-3">
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
             </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
+          </div>
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
+        <div class="container-fluid d-flex justify-content-between px-0 mb-3">
+          <p class="fw-bold fs-4 mb-3 text-light">I tuoi mix preferiti</p>
+          <a class="text-secondary text-decoration-none" href="#"><small>VISUALIZZA TUTTO</small></a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 mb-5 row-gap-3">
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-19.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="container-fluid d-flex justify-content-between px-0 mb-3">
-        <p class="fw-bold fs-4 mb-3 text-light">Ascoltate di recente</p>
-        <a class="text-secondary text-decoration-none" href="#"><small>VISUALIZZA TUTTO</small></a>
-      </div>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 mb-5 row-gap-3">
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-12.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid d-flex justify-content-between px-0 mb-3">
-        <p class="fw-bold fs-4 mb-3 text-light">I tuoi mix preferiti</p>
-        <a class="text-secondary text-decoration-none" href="#"><small>VISUALIZZA TUTTO</small></a>
-      </div>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 mb-5 row-gap-3">
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div style="background-color: #171717" class="card border-0 text-light">
-            <div class="px-4 pt-4 pb-1 rounded-3">
-              <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
-            </div>
-            <div class="card-body px-4">
-              <h5 class="card-title fs-5">Titolo canzone</h5>
-              <p class="card-text text-secondary">Artista</p>
+          <div class="col">
+            <div style="background-color: #171717" class="card border-0 text-light">
+              <div class="px-4 pt-4 pb-1 rounded-3">
+                <img src="assets/imgs/main/image-14.jpg" class="card-img img-fluid" alt="pic" />
+              </div>
+              <div class="card-body px-4">
+                <h5 class="card-title fs-5">Titolo canzone</h5>
+                <p class="card-text text-secondary">Artista</p>
+              </div>
             </div>
           </div>
         </div>
