@@ -1,0 +1,23 @@
+#albumInfo {
+  background: linear-gradient(180deg, rgba(230, 198, 82, 1) 0%, rgba(118, 102, 42, 1) 100%);
+}
+
+#cover {
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+#type {
+  font-size: 0.81rem;
+}
+
+#playBtn {
+  border: 0;
+  background-color: #1ed760;
+}
+
+#favBtn,
+#moreBtn {
+  border: 0;
+  background-color: transparent;
+  fill: #cac7bc;
+}
