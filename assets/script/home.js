@@ -1,25 +1,33 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q={query}";
 
-fetch(url)
-  .then(res => res.json())
-  .then(data => {
-    const row1 = document.querySelector("#card-playlist");
-    row1.innerHTML = "";
-    const row2 = document.querySelector("#cards2");
-    row2.innerHTML = "";
-    const canzoni = data.data;
-    shuffle(canzoni);
-    createCardPrincipale(canzoni[0].title, canzoni[0].artist.picture_medium, canzoni[0].artist.name);
-    for (let i = 0; i < 6; i++) {
-      const canzone = canzoni[i];
-      createCardPlaylist(canzone.title, canzone.artist.picture_medium);
-    }
-    for (let i = 6; i < 11; i++) {
-      const canzone = canzoni[i];
-      createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name);
-    }
-  })
-  .catch(error => console.log(error));
+window.onload = function () {
+  richiesta(url);
+};
+
+const richiesta = url => {
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      const row1 = document.querySelector("#card-playlist");
+      row1.innerHTML = "";
+      const row2 = document.querySelector("#cards2");
+      row2.innerHTML = "";
+      const row3 = document.querySelector("#card-principale");
+      row3.innerHTML = "";
+      const canzoni = data.data;
+      shuffle(canzoni);
+      createCardPrincipale(canzoni[0].title, canzoni[0].artist.picture_medium, canzoni[0].artist.name);
+      for (let i = 0; i < 6; i++) {
+        const canzone = canzoni[i];
+        createCardPlaylist(canzone.title, canzone.artist.picture_medium);
+      }
+      for (let i = 6; i < 11; i++) {
+        const canzone = canzoni[i];
+        createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name);
+      }
+    })
+    .catch(error => console.log(error));
+};
 
 const createCardPlaylist = (title, img) => {
   const row1 = document.querySelector("#card-playlist");
@@ -101,3 +109,11 @@ const shuffle = array => {
   }
   return array;
 };
+
+const btnSearch = document.querySelector("#search");
+btnSearch.addEventListener("click", event => {
+  event.preventDefault();
+  const cerca = document.querySelector("#input-search").value;
+  const payload = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${cerca}`;
+  richiesta(payload);
+});
