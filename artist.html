@@ -43,6 +43,18 @@
         z-index: 1;
       }
 
+      #hearthBg {
+        display: block;
+        position: absolute;
+        background-color: #2dbe60;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        bottom: 2px;
+        right: -3px;
+        z-index: 1;
+      }
+
       .light-gray {
         color: #a9a9a8;
       }
@@ -151,16 +163,20 @@
           </div>
           <div class="col-6">
             <h3 class="text-white fs-5 fw-bold ms-5 mb-4">Brani che ti piacciono</h3>
-            <div class="d-flex position-relative ms-5">
+            <div class="d-flex ms-5">
               <!--   <i class="bi bi-chat-heart-fill text-success" style="position: absolute; left: 48px; bottom: 8px"></i> -->
-              <!--   <i class="bi bi-heart position-absolute text-white left-0 end-0"></i> -->
-              <img
-                src="https://picsum.photos/200/300"
-                alt="random-img"
-                class="rounded-circle"
-                height="80px"
-                width="80px"
-              />
+              <div class="position-relative">
+                <i class="bi bi-heart-fill position-absolute text-white end-0 bottom-0 z-2"></i>
+                <img
+                  src="https://picsum.photos/200/300"
+                  alt="random-img"
+                  class="rounded-circle"
+                  height="80px"
+                  width="80px"
+                />
+                <span id="hearthBg"></span>
+              </div>
+
               <div class="px-3 d-flex flex-column justify-content-center">
                 <h6 class="text-white">Hai messo mi piace a 11 brani</h6>
                 <p class="light-gray">Di Yellowcard</p>
