@@ -10,69 +10,181 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <style>
+      #playBtn {
+        border: 0;
+        background-color: #1ed760;
+      }
+
+      #moreBtn {
+        border: 0;
+        background-color: transparent;
+        fill: #cac7bc;
+      }
+      #artistBanner {
+        background-image: url("https://media.timeout.com/images/103733283/750/422/image.jpg");
+        padding-top: 10rem;
+      }
+
+      #verifiedIcon {
+        fill: #0c67d3;
+      }
+
+      #verifyBg {
+        display: block;
+        position: absolute;
+        background-color: #fff;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        top: 7px;
+        left: 5px;
+        z-index: 1;
+      }
+
+      #hearthBg {
+        display: block;
+        position: absolute;
+        background-color: #2dbe60;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+        bottom: 2px;
+        right: -3px;
+        z-index: 1;
+      }
+
+      .light-gray {
+        color: #a9a9a8;
+      }
+    </style>
   </head>
   <body>
-    <div class="container d-flex justify-content-center align-items-stretch">
+    <div class="container">
       <div class="aside"></div>
       <div class="artist-container d-flex flex-column flex-wrap bg-dark">
-        <div
-          class="d-flex flex-column align-items-start px-3"
-          style="background-image: url(assets/imgs/main/image-11.jpg)"
-        >
+        <div id="artistBanner" class="d-flex flex-column align-items-start px-3 ps-4">
           <div class="d-flex">
-            <i class="bi bi-patch-check-fill text-primary"></i>
+            <div class="position-relative">
+              <svg
+                id="verifiedIcon"
+                role="img"
+                height="24"
+                width="24"
+                aria-hidden="true"
+                class="Svg-sc-ytk21e-0 kcjDTG b0NcxAbHvRbqgs2S8QDg position-relative z-2"
+                viewBox="0 0 24 24"
+                data-encore-id="icon"
+              >
+                <path
+                  d="M10.814.5a1.658 1.658 0 0 1 2.372 0l2.512 2.572 3.595-.043a1.658 1.658 0 0 1 1.678 1.678l-.043 3.595 2.572 2.512c.667.65.667 1.722 0 2.372l-2.572 2.512.043 3.595a1.658 1.658 0 0 1-1.678 1.678l-3.595-.043-2.512 2.572a1.658 1.658 0 0 1-2.372 0l-2.512-2.572-3.595.043a1.658 1.658 0 0 1-1.678-1.678l.043-3.595L.5 13.186a1.658 1.658 0 0 1 0-2.372l2.572-2.512-.043-3.595a1.658 1.658 0 0 1 1.678-1.678l3.595.043L10.814.5zm6.584 9.12a1 1 0 0 0-1.414-1.413l-6.011 6.01-1.894-1.893a1 1 0 0 0-1.414 1.414l3.308 3.308 7.425-7.425z"
+                ></path>
+              </svg>
+              <span id="verifyBg"></span>
+            </div>
+
             <p class="text-white px-2 my-0">Artista Verificato</p>
           </div>
           <h1 class="text-white fw-bold" style="font-size: 4rem">Yellowcard</h1>
           <p class="text-white">3.433.158 ascoltatori mensili</p>
         </div>
         <div class="my-3 px-4">
-          <i class="bi bi-play-circle-fill text-success"></i>
-          <button class="mx-3 text-white bg-dark border border-white">
-            Following
+          <button id="playBtn" class="p-2 rounded-circle me-4">
+            <svg
+              role="img"
+              height="28"
+              width="28"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 uPxdw"
+            >
+              <path
+                d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+              ></path>
+            </svg>
           </button>
-          <i class="bi bi-three-dots text-white"></i>
+          <button class="mx-3 py-1 px-3 text-white bg-dark border border-white">Following</button>
+          <button id="moreBtn" class="p-2 rounded-circle me-1">
+            <svg
+              role="img"
+              height="32"
+              width="32"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 uPxdw"
+            >
+              <path
+                d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+              ></path>
+            </svg>
+          </button>
         </div>
-        <div class="d-flex justify-content-start align-items-start">
-          <div>
-            <h3 class="text-white">Popolari</h3>
-            <ol class="text-white">
-              <li>
-                <img src="https://picsum.photos/200/300" height="50px" alt="" />
-                CANZONE DURATA
-              </li>
-              <li>CANZONE N.STREAM DURATA</li>
-              <li>CANZONE N.STREAM DURATA</li>
-              <li>CANZONE N.STREAM DURATA</li>
-              <li>CANZONE N.STREAM DURATA</li>
-            </ol>
-            <p class="text-white">VISUALIZZA ALTRO</p>
+
+        <div class="row">
+          <div class="col-6 text-white">
+            <h3 class="text-white fs-5 fw-bold ms-5">Popolari</h3>
+            <div class="row mb-3">
+              <div class="col-3 text-end light-gray">1</div>
+              <div class="col-3"><img src="https://picsum.photos/seed/picsum/40/40" alt="Album cover" /></div>
+              <div class="col-3 text-end light-gray">276.456.453</div>
+              <div class="col-3 text-end light-gray">3:18</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-3 text-end light-gray">2</div>
+              <div class="col-3"><img src="https://picsum.photos/seed/picsum/40/40" alt="Album cover" /></div>
+              <div class="col-3 text-end light-gray">276.456.453</div>
+              <div class="col-3 text-end light-gray">3:18</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-3 text-end light-gray">3</div>
+              <div class="col-3"><img src="https://picsum.photos/seed/picsum/40/40" alt="Album cover" /></div>
+              <div class="col-3 text-end light-gray">276.456.453</div>
+              <div class="col-3 text-end light-gray">3:18</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-3 text-end light-gray">4</div>
+              <div class="col-3"><img src="https://picsum.photos/seed/picsum/40/40" alt="Album cover" /></div>
+              <div class="col-3 text-end light-gray">276.456.453</div>
+              <div class="col-3 text-end light-gray">3:18</div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-3 text-end light-gray">5</div>
+              <div class="col-3"><img src="https://picsum.photos/seed/picsum/40/40" alt="Album cover" /></div>
+              <div class="col-3 text-end light-gray">276.456.453</div>
+              <div class="col-3 text-end light-gray">3:18</div>
+            </div>
           </div>
-          <div class="d-flex flex-column">
-            <h3 class="text-white">Brani che ti piacciono</h3>
-            <div class="d-flex position-relative">
-              <i
-                class="bi bi-chat-heart-fill text-success"
-                style="position: absolute; left: 48px; bottom: 8px"
-              ></i>
-              <img
-                src="https://picsum.photos/200/300"
-                alt="random-img"
-                class="rounded-circle"
-                height="80px"
-                width="80px"
-              />
-              <div class="px-2">
+          <div class="col-6">
+            <h3 class="text-white fs-5 fw-bold ms-5 mb-4">Brani che ti piacciono</h3>
+            <div class="d-flex ms-5">
+              <div class="position-relative">
+                <i class="bi bi-heart-fill position-absolute text-white end-0 bottom-0 z-2"></i>
+                <img
+                  src="https://picsum.photos/200/300"
+                  alt="random-img"
+                  class="rounded-circle"
+                  height="80px"
+                  width="80px"
+                />
+                <span id="hearthBg"></span>
+              </div>
+
+              <div class="px-3 d-flex flex-column justify-content-center">
                 <h6 class="text-white">Hai messo mi piace a 11 brani</h6>
-                <p class="text-white">Di Yellowcard</p>
+                <p class="light-gray">Di Yellowcard</p>
               </div>
             </div>
           </div>
         </div>
+
+        <a class="small fw-semibold ms-5 mt-4 mb-5 text-decoration-none text-white" href="#">VISUALIZZA ALTRO</a>
       </div>
       <div class="side"></div>
       <div class="footer"></div>
