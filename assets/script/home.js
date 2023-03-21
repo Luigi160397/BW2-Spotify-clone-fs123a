@@ -17,7 +17,7 @@ const richiesta = url => {
       row3.innerHTML = "";
       const row4 = document.querySelector("#recenti");
       row4.innerHTML = "";
-      spinner.display = "none";
+      spinner.style.display = "none";
       const canzoni = data.data;
       shuffle(canzoni);
       createCardPrincipale(
