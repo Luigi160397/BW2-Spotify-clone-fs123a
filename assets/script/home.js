@@ -141,8 +141,15 @@ const shuffle = array => {
   return array;
 };
 
-const btnSearch = document.querySelector("#search");
-btnSearch.addEventListener("click", event => {
+const showBtn = () => {
+  const form = document.querySelector("#form-input");
+  form.style.display = "block";
+  const input = document.querySelector("#input-search");
+  input.focus();
+};
+
+const form = document.querySelector("#form-input");
+form.addEventListener("submit", event => {
   event.preventDefault();
   const cerca = document.querySelector("#input-search").value;
   const payload = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${cerca}`;
