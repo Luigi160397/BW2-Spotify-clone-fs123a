@@ -27,11 +27,11 @@
         <div class="btn-group dropend">
           <button
             type="button"
-            class="btn d-flex flex-column flex-md-row align-items-center"
+            class="btn d-flex align-items-center gap-2 ps-3 flex-column flex-md-row py-0"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <a href="#"><i class="bi bi-search fs-4 text-decoration-none text-secondary ps-1 me-2"></i></a>
+            <a href="#"><i class="bi bi-search fs-4 text-decoration-none text-secondary"></i></a>
             <a href="#" class="text-decoration-none text-secondary">Cerca</a>
           </button>
           <div class="dropdown-menu dropdown-menu-dark">
@@ -150,7 +150,7 @@
                   />
                 </svg>
               </button>
-              <button id="moreBtn" class="p-2 rounded-circle me-1">
+              <button id="moreBtn" class="p-2 rounded-circle me-1 d-none d-lg-inline-block">
                 <svg
                   role="img"
                   height="32"
@@ -165,8 +165,23 @@
                   ></path>
                 </svg>
               </button>
+              <button id="moreBtn" class="p-2 rounded-circle me-1 d-inline-block d-lg-none">
+                <svg
+                  role="img"
+                  height="32"
+                  width="32"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  data-encore-id="icon"
+                  class="Svg-sc-ytk21e-0 gQUQL"
+                >
+                  <path
+                    d="M10.5 4.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0zm0 15a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0zm0-7.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0z"
+                  ></path>
+                </svg>
+              </button>
             </div>
-            <div class="row mb-1 mt-4 light-gray">
+            <div class="row mb-1 mt-4 light-gray d-none d-lg-flex">
               <div class="col-1 fw-semibold songNumber">#</div>
               <div class="col-4 fw-semibold">TITOLO</div>
               <div class="col-3 text-end fw-semibold">RIPRODUZIONI</div>
@@ -187,77 +202,85 @@
               </div>
             </div>
             <hr />
-            <div class="row mb-2">
-              <div class="col-1 songNumber">1</div>
+            <div class="row mb-2 justify-content-between justify-content-lg-start">
+              <div class="col-1 songNumber d-none d-lg-block">1</div>
               <div class="col-4">
                 <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
                 <small class="light-gray">Dolor sit amet</small>
               </div>
-              <div class="col-3 text-end light-gray">3.694.578</div>
-              <div class="col-3 text-end light-gray">2:23</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">3.694.578</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">2:23</div>
+              <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
             </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">2</div>
+            <div class="row mb-2 justify-content-between justify-content-lg-start">
+              <div class="col-1 songNumber d-none d-lg-block">2</div>
               <div class="col-4">
                 <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
                 <small class="light-gray">Dolor sit amet</small>
               </div>
-              <div class="col-3 text-end light-gray">543.278</div>
-              <div class="col-3 text-end light-gray">4:18</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">543.278</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">4:18</div>
+              <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
             </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">3</div>
+            <div class="row mb-2 justify-content-between justify-content-lg-start">
+              <div class="col-1 songNumber d-none d-lg-block">3</div>
               <div class="col-4">
                 <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
                 <small class="light-gray">Dolor sit amet</small>
               </div>
-              <div class="col-3 text-end light-gray">234.578</div>
-              <div class="col-3 text-end light-gray">1:28</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">234.578</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">1:28</div>
+              <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
             </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">4</div>
+            <div class="row mb-2 justify-content-between justify-content-lg-start">
+              <div class="col-1 songNumber d-none d-lg-block">4</div>
               <div class="col-4">
                 <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
                 <small class="light-gray">Dolor sit amet</small>
               </div>
-              <div class="col-3 text-end light-gray">100.378</div>
-              <div class="col-3 text-end light-gray">1:08</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">100.378</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">1:08</div>
+              <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
             </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">5</div>
+            <div class="row mb-2 justify-content-between justify-content-lg-start">
+              <div class="col-1 songNumber d-none d-lg-block">5</div>
               <div class="col-4">
                 <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
                 <small class="light-gray">Dolor sit amet</small>
               </div>
-              <div class="col-3 text-end light-gray light-gray">123.223</div>
-              <div class="col-3 text-end light-gray light-gray">2:38</div>
+              <div class="col-3 text-end light-gray light-gray d-none d-lg-block">123.223</div>
+              <div class="col-3 text-end light-gray light-gray d-none d-lg-block">2:38</div>
+              <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
             </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">6</div>
+            <div class="row mb-2 justify-content-between justify-content-lg-start">
+              <div class="col-1 songNumber d-none d-lg-block">6</div>
               <div class="col-4">
                 <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
                 <small class="light-gray">Dolor sit amet</small>
               </div>
-              <div class="col-3 text-end light-gray">634.586</div>
-              <div class="col-3 text-end light-gray">1:22</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">634.586</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">1:22</div>
+              <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
             </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">7</div>
+            <div class="row mb-2 justify-content-between justify-content-lg-start">
+              <div class="col-1 songNumber d-none d-lg-block">7</div>
               <div class="col-4">
                 <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
                 <small class="light-gray">Dolor sit amet</small>
               </div>
-              <div class="col-3 text-end light-gray">454.278</div>
-              <div class="col-3 text-end light-gray">1:25</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">454.278</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">1:25</div>
+              <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
             </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">8</div>
+            <div class="row mb-2 justify-content-between justify-content-lg-start">
+              <div class="col-1 songNumber d-none d-lg-block">8</div>
               <div class="col-4">
                 <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
                 <small class="light-gray">Dolor sit amet</small>
               </div>
-              <div class="col-3 text-end light-gray">643.342</div>
-              <div class="col-3 text-end light-gray">1:22</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">643.342</div>
+              <div class="col-3 text-end light-gray d-none d-lg-block">1:22</div>
+              <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
             </div>
           </div>
         </div>
