@@ -1,7 +1,7 @@
-/* #mainWrapper {
+#contenuto {
   margin-left: 300px !important;
   margin-right: 250px !important;
-} */
+}
 
 nav {
   top: 0;
@@ -11,16 +11,55 @@ nav {
   background-color: #1313132a;
 }
 
-@media screen and (max-width: 991px) {
-  #mainWrapper {
+#aside-dx {
+  display: none;
+}
+
+@media screen and (min-width: 1020px) {
+  #aside-dx {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  #contenuto {
     margin-right: 0 !important;
   }
   nav {
-    right: 0;
+    right: 0 !important;
   }
 
   #imgMobile {
     width: 100px;
+  }
+}
+
+#aside-sx {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 769px) {
+  nav {
+    left: 0;
+  }
+  #aside-sx {
+    flex-direction: row !important;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    top: auto;
+    bottom: -35px;
+    background-color: #131313de;
+  }
+
+  #contenuto {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
@@ -31,5 +70,36 @@ nav {
 @media (min-width: 768px) {
   #cardsPlaylist {
     background-color: #363636;
+  }
+}
+
+#aside-sx {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  padding-top: 5px;
+}
+
+@media screen and (max-width: 769px) {
+  #mainWrapper {
+    margin-left: 0 !important;
+    padding-bottom: 60px !important;
+  }
+
+  nav {
+    left: 0 !important;
+  }
+
+  #aside-sx {
+    flex-direction: row !important;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    top: auto;
+    bottom: -35px;
+    background-color: #131313de;
   }
 }

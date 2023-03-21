@@ -31,7 +31,7 @@ const richiesta = url => {
         const canzone = canzoni[i];
         createCardPlaylist(canzone.title, canzone.artist.picture_medium);
       }
-      for (let i = 6; i < 11; i++) {
+      for (let i = 6; i < 10; i++) {
         const canzone = canzoni[i];
         createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id);
         createCard2(canzone.album.title, canzone.album.cover_medium, canzone.artist.name, canzone.artist.id);
@@ -48,18 +48,18 @@ const createCardPlaylist = (title, img) => {
 
   col1.innerHTML = `<div id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2">
     <div class="row g-0"   style="flex-wrap: nowrap;">
-      <div class="col-md-2" style="max-width: 100px;">
+      <div class="col-md-4" style="max-width: 100px;">
         <img
           id="imgMobile"
-          style="min-height: 70px; min-width: 70px"
+          style="min-height: 60px; min-width: 60px"
           src="${img}"
           class="img-fluid rounded-start"
           alt="pic"
         />
       </div>
-      <div class="col-md-10" style="max-width: 73%;">
+      <div class="col-md-8" style="max-width: 73%;">
         <div class="card-body">
-          <h5 class="card-text fw-bold fs-6">${title}</h5>
+          <h5 class="card-text text-truncate fw-bold fs-6">${title}</h5>
         </div>
       </div>
     </div>
