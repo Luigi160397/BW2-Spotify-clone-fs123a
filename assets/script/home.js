@@ -34,7 +34,7 @@ const richiesta = url => {
       for (let i = 6; i < 10; i++) {
         const canzone = canzoni[i];
         createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id);
-        createCard2(canzone.album.title, canzone.album.cover_medium, canzone.artist.name, canzone.artist.id);
+        createCard2(canzone.album.title, canzone.album.cover_medium, canzone.artist.name, canzone.album.id);
       }
     })
     .catch(error => console.log(error));
