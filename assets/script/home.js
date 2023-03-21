@@ -110,7 +110,7 @@ const createCardPrincipale = (title, img, artist, id) => {
       <div class="card-body">
         <h6 class="card-title fw-bold">ALBUM</h6>
         <h1 class="card-title fw-bold">${title}</h1>
-        <p class="card-text"><a class="text-decoration-none text-secondary fw-bold" href=artist.html?id=${id}>${artist}</a></p>
+        <p class="card-text"><a class="text-decoration-none text-light fw-bold" href=artist.html?id=${id}>${artist}</a></p>
         <p class="card-text fw-bold">Ascolta il nuovo singolo di <a class="text-decoration-none text-light" href=artist.html?id=${id}>${artist}</a>!</p>
         <div class="d-flex gap-2">
           <button style="background-color: #1ed760" class="btn px-4 py-2 rounded-pill fw-bold">Play</button>
