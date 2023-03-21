@@ -26,10 +26,7 @@ const richiesta = url => {
       for (let i = 6; i < 11; i++) {
         const canzone = canzoni[i];
         createCard("#cards2", canzone.title, canzone.artist.picture_medium, canzone.artist.name);
-      }
-      for (let i = 6; i < 11; i++) {
-        const canzone = canzoni[i];
-        createCard("#recenti", canzone.title, canzone.artist.picture_medium, canzone.artist.name);
+        createCard("#recenti", canzone.album.title, canzone.album.cover_medium, canzone.artist.name);
       }
     })
     .catch(error => console.log(error));
