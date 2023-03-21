@@ -11,22 +11,34 @@ const richiesta = url => {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      const canzone = data;
-      const release_date = canzone.release_date;
+      const album = data;
+
+      const row = document.querySelector("#row-canzoni");
+      row.innerHTML = "";
+      const release_date = album.release_date;
       const year = new Date(release_date).getFullYear();
-      const durata = canzone.duration;
+      const durata = album.duration;
       const minuti = Math.floor(durata / 60);
       const secondi = durata % 60;
       createCardPrincipale(
-        canzone.cover_big,
-        canzone.artist.picture_small,
-        canzone.title,
-        canzone.artist.name,
+        album.cover_big,
+        album.artist.picture_small,
+        album.title,
+        album.artist.name,
         year,
-        canzone.nb_tracks,
+        album.nb_tracks,
         minuti,
         secondi
       );
+      for (const canzone of album.tracks.data) {
+        const rank = canzone.rank;
+        const riproduzioni = rank.toLocaleString(undefined, { minimumFractionDigits: 0 });
+        const durations = canzone.duration;
+        const min = Math.floor(durations / 60);
+        const sec = durations % 60;
+
+        creaCanzone(canzone.title, canzone.artist.name, riproduzioni, min, sec);
+      }
     })
     .catch(error => console.log(error));
 };
@@ -58,4 +70,22 @@ const createCardPrincipale = (imgCard, imgArtist, album, artist, anno, brani, mi
       </div>
     </div>
   </div>`;
+};
+
+let i = 1;
+const creaCanzone = (title, artist, riproduzioni, min, sec) => {
+  const row = document.querySelector("#row-canzoni");
+  const html = `<div class="row mb-2 justify-content-between justify-content-lg-start">
+                    <div class="col-1 songNumber d-none d-lg-block">${i}</div>
+                    <div class="col-4">
+                      <h3 class="fs-6 fw-bold mb-0">${title}</h3>
+                      <small class="light-gray">${artist}</small>
+                    </div>
+                    <div class="col-3 text-end light-gray d-none d-lg-block">${riproduzioni}</div>
+                    <div class="col-3 text-end light-gray d-none d-lg-block">${min}:${sec}</div>
+                    <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
+                  </div>`;
+
+  row.innerHTML += html;
+  i++;
 };
