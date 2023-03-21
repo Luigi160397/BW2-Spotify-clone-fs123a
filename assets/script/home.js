@@ -143,9 +143,13 @@ const shuffle = array => {
 
 const showBtn = () => {
   const form = document.querySelector("#form-input");
-  form.style.display = "block";
-  const input = document.querySelector("#input-search");
-  input.focus();
+  if (form.style.display === "block") {
+    form.style.display = "none";
+  } else {
+    form.style.display = "block";
+    const input = document.querySelector("#input-search");
+    input.focus();
+  }
 };
 
 const form = document.querySelector("#form-input");
