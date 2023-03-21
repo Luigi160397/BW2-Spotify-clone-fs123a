@@ -63,3 +63,29 @@ nav{
   .light-gray {
     color: #a9a9a8;
   }
+  #aside-sx{
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+@media screen and (max-width: 767px){
+#main{
+  margin-left: 0 !important;
+  padding-bottom: 50px !important;
+}
+nav{
+  left: 0;
+}
+#aside-sx{
+  flex-direction: row !important;
+  justify-content: space-around;
+  height: auto;
+  width: 100%;
+  top: auto;
+  bottom: -35px;
+  background-color: #131313de;
+}
+}

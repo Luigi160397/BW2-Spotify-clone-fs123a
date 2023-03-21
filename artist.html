@@ -17,19 +17,8 @@
     <link rel="stylesheet" href="assets/css/artist.css" />
   </head>
   <body>
-    <div class="container-fluid p-0 bg-dark">
-      <aside
-        id="aside-sx"
-        style="
-          height: 100%;
-          width: 300px;
-          position: fixed;
-          z-index: 1;
-          top: 0;
-          left: 0;
-        "
-        class="d-flex flex-column align-items-start"
-      >
+    <div class="container-fluid d-flex p-0 bg-dark">
+      <aside id="aside-sx" class="d-flex flex-column align-items-start">
         <button class="btn rounded-pill fw-bold text-light d-none d-md-block">
           <i class="bi bi-three-dots text-secondary fs-3"></i>
         </button>
@@ -124,7 +113,7 @@
       </aside>
       <div
         id="main"
-        class="artist-container d-flex flex-column flex-wrap bg-dark"
+        class="artist-container d-flex flex-column flex-wrap bg-dark w-100"
       >
         <nav class="navbar position-fixed">
           <div class="container-fluid justify-content-start px-0">
@@ -142,6 +131,7 @@
             ></a>
           </div>
         </nav>
+
         <div
           id="artistBanner"
           class="d-flex flex-column align-items-start px-3 ps-4"
@@ -206,8 +196,8 @@
           </button>
         </div>
 
-        <div class="row">
-          <div class="col-6 text-white">
+        <div class="row" style="margin-inline: 12px">
+          <div class="col-11 col-md-6 order-1 order-md-0 pt-5 text-white">
             <h3 class="text-white fs-5 fw-bold ms-5">Popolari</h3>
             <div class="row mb-3">
               <div class="col-3 text-end light-gray">1</div>
@@ -269,7 +259,7 @@
               <div class="col-3 text-end light-gray">3:18</div>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-11 col-md-6 order-0 order-md-0">
             <h3 class="text-white fs-5 fw-bold ms-5 mb-4">
               Brani che ti piacciono
             </h3>
