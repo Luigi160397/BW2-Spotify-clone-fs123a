@@ -16,16 +16,25 @@
   </head>
   <body>
     <div class="container-fluid d-flex p-0 bg-dark">
-      <aside style="height: 100%; width: 300px; position: fixed; z-index: 9999; top: 0; left: 0">
-        <button class="btn rounded-pill fw-bold text-light">
+      <aside
+        id="aside-sx"
+        class="d-flex flex-column align-items-start"
+        style="height: 100%; width: 300px; position: fixed; z-index: 9999; top: 0; left: 0"
+      >
+        <button class="btn rounded-pill fw-bold text-light d-none d-md-block">
           <i class="bi bi-three-dots text-secondary fs-3"></i>
         </button>
-        <div class="d-flex align-items-center gap-2 ps-3">
+        <div class="d-flex align-items-center gap-2 ps-3 flex-column flex-md-row">
           <a href="#"><i class="bi bi-house-door-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">Home</a>
         </div>
         <div class="btn-group dropend">
-          <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+          <button
+            type="button"
+            class="btn d-flex flex-column flex-md-row align-items-center"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             <a href="#"><i class="bi bi-search fs-4 text-decoration-none text-secondary ps-1 me-1"></i></a>
             <a href="#" class="text-decoration-none text-secondary">Cerca</a>
           </button>
@@ -43,28 +52,25 @@
             </form>
           </div>
         </div>
-        <div class="d-flex align-items-center gap-2 ps-3 pb-5">
+        <div class="d-flex align-items-center gap-2 ps-3 pb-5 flex-column flex-md-row">
           <a href="#"><i class="bi bi-collection-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">La tua Libreria</a>
         </div>
-        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2 d-none d-md-block">
           <a href="#"><i class="bi bi-plus-square-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">Crea playlist</a>
         </div>
-        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2 d-none d-md-block">
           <a href="#"><i class="bi bi-suit-heart-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">Brani che ti piacciono</a>
         </div>
-        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2 d-none d-md-block">
           <a href="#"><i class="bi bi-bookmark-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">I tuoi episodi</a>
         </div>
       </aside>
-      <main style="margin-left: 300px; margin-right: 250px" class="container-fluid px-0">
-        <nav
-          style="top: 0; right: 250px; left: 300px; z-index: 9999; background-color: #1313132a"
-          class="navbar position-fixed"
-        >
+      <main class="container-fluid px-0">
+        <nav class="navbar position-fixed">
           <div class="container-fluid justify-content-start px-0">
             <a style="background-color: #131313; margin-right: 8px" class="text-light rounded-circle fs-3 px-2" href="#"
               ><i class="bi bi-arrow-left-short"></i
@@ -259,7 +265,10 @@
           </div>
         </div>
       </main>
-      <aside style="height: 100%; width: 240px; position: fixed; z-index: 1; top: 0; right: 0">
+      <aside
+        class="d-none d-lg-block"
+        style="height: 100%; width: 240px; position: fixed; z-index: 1; top: 0; right: 0"
+      >
         <div class="d-flex align-items-center justify-content-between px-3 py-3 pb-5 text-light">
           <p>Attività amici</p>
           <p>

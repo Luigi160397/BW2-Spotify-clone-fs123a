@@ -45,3 +45,25 @@
 .songNumber {
   width: 4.3%;
 }
+
+main {
+  margin-left: 300px !important;
+  margin-right: 250px !important;
+}
+
+nav {
+  top: 0;
+  right: 250px;
+  left: 300px;
+  z-index: 9999;
+  background-color: #1313132a;
+}
+
+@media screen and (max-width: 991px) {
+  main {
+    margin-right: 0 !important;
+  }
+  nav {
+    right: 0;
+  }
+}
