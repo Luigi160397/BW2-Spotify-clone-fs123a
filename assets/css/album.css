@@ -1,7 +1,7 @@
 #albumInfo {
   background: linear-gradient(180deg, rgba(230, 198, 82, 1) 0%, rgba(118, 102, 42, 1) 100%);
   padding-bottom: 20rem;
-  padding-left: 2rem;
+  padding-inline: 2rem;
   padding-top: 2rem;
 }
 
@@ -65,5 +65,46 @@ nav {
   }
   nav {
     right: 0;
+  }
+}
+
+#aside-sx {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 769px) {
+  main {
+    margin-left: 0 !important;
+  }
+  #albumContentWrapper {
+    padding-bottom: 50px !important;
+  }
+  nav {
+    left: 0;
+  }
+  #aside-sx {
+    flex-direction: row !important;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    top: auto;
+    bottom: -35px;
+    background-color: #131313de;
+  }
+}
+
+@media screen and (max-width: 1266px) {
+  #titolo-card {
+    font-size: 3rem !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  #titolo-card {
+    font-size: 5rem !important;
   }
 }

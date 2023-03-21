@@ -16,11 +16,7 @@
   </head>
   <body>
     <div class="container-fluid d-flex p-0 bg-dark">
-      <aside
-        id="aside-sx"
-        class="d-flex flex-column align-items-start"
-        style="height: 100%; width: 300px; position: fixed; z-index: 9999; top: 0; left: 0"
-      >
+      <aside id="aside-sx" class="d-flex flex-column align-items-start">
         <button class="btn rounded-pill fw-bold text-light d-none d-md-block">
           <i class="bi bi-three-dots text-secondary fs-3"></i>
         </button>
@@ -82,17 +78,18 @@
         </nav>
         <div id="albumInfo" class="container-fluid">
           <div class="row">
-            <div class="col-3">
+            <div class="col-12 col-lg-6 align-self-center pb-3 pb-lg-0">
               <img
+                style="min-height: 200px; min-width: 200px"
                 id="cover"
                 class="img-fluid"
                 src="https://m.media-amazon.com/images/I/51pZ2ah+f8L.jpg"
                 alt="Album cover"
               />
             </div>
-            <div class="col-9 text-white d-flex flex-column justify-content-end">
+            <div class="col-9 col-lg-5 text-white d-flex flex-column justify-content-end align-self-center">
               <h3 id="type" class="small fw-semibold m-0">ALBUM</h3>
-              <h2 class="display-1 fw-bold mb-4">Gioventù brucata</h2>
+              <h2 id="titolo-card" class="display-1 fw-bold mb-4">Gioventù brucata</h2>
               <div>
                 <img
                   class="img-fluid rounded-circle"
