@@ -99,13 +99,18 @@ nav {
   }
 }
 
-@media screen and (max-width: 1266px) {
+@media screen and (max-width: 1560px) {
   #titolo-card {
     font-size: 3rem !important;
   }
 }
+@media screen and (max-width: 1120px) {
+  #titolo-card {
+    font-size: 2.2rem !important;
+  }
+}
 @media screen and (max-width: 991px) {
   #titolo-card {
-    font-size: 4.5rem !important;
+    font-size: 3.2rem !important;
   }
 }
