@@ -46,17 +46,18 @@ const createCardPlaylist = (title, img) => {
   col1.setAttribute("class", "col");
   row1.appendChild(col1);
 
-  col1.innerHTML = `<div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
-    <div class="row g-0">
-      <div class="col-md-2">
+  col1.innerHTML = `<div id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2">
+    <div class="row g-0"   style="flex-wrap: nowrap;">
+      <div class="col-md-2" style="max-width: 100px;">
         <img
+          id="imgMobile"
           style="min-height: 70px; min-width: 70px"
           src="${img}"
           class="img-fluid rounded-start"
           alt="pic"
         />
       </div>
-      <div class="col-md-10">
+      <div class="col-md-10" style="max-width: 73%;">
         <div class="card-body">
           <h5 class="card-text fw-bold fs-6">${title}</h5>
         </div>
