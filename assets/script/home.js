@@ -18,15 +18,20 @@ const richiesta = url => {
       row4.innerHTML = "";
       const canzoni = data.data;
       shuffle(canzoni);
-      createCardPrincipale(canzoni[0].title, canzoni[0].artist.picture_medium, canzoni[0].artist.name);
+      createCardPrincipale(
+        canzoni[0].title,
+        canzoni[0].artist.picture_medium,
+        canzoni[0].artist.name,
+        canzoni[0].artist.id
+      );
       for (let i = 0; i < 6; i++) {
         const canzone = canzoni[i];
         createCardPlaylist(canzone.title, canzone.artist.picture_medium);
       }
       for (let i = 6; i < 11; i++) {
         const canzone = canzoni[i];
-        createCard("#cards2", canzone.title, canzone.artist.picture_medium, canzone.artist.name);
-        createCard("#recenti", canzone.album.title, canzone.album.cover_medium, canzone.artist.name);
+        createCard("#cards2", canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id);
+        createCard("#recenti", canzone.album.title, canzone.album.cover_medium, canzone.artist.name, canzone.artist.id);
       }
     })
     .catch(error => console.log(error));
@@ -57,7 +62,7 @@ const createCardPlaylist = (title, img) => {
   </div>`;
 };
 
-const createCard = (row, title, img, artist) => {
+const createCard = (row, title, img, artist, id) => {
   const row2 = document.querySelector(`${row}`);
   const col2 = document.createElement("div");
   col2.setAttribute("class", "col");
@@ -70,13 +75,13 @@ const createCard = (row, title, img, artist) => {
       </div>
       <div class="card-body px-4">
         <h5 class="card-title fs-5 text-truncate">${title}</h5>
-        <p class="card-text text-secondary">${artist}</p>
+        <p class="card-text"><a class="text-decoration-none text-secondary" href=artist.html?id=${id}>${artist}</a></p>
       </div>
     </div>
   </div>`;
 };
 
-const createCardPrincipale = (title, img, artist) => {
+const createCardPrincipale = (title, img, artist, id) => {
   const cardPrincipale = document.querySelector("#card-principale");
   cardPrincipale.innerHTML = `<div class="row g-0">
     <div class="col-2">
@@ -86,8 +91,8 @@ const createCardPrincipale = (title, img, artist) => {
       <div class="card-body">
         <h6 class="card-title fw-bold">ALBUM</h6>
         <h1 class="card-title fw-bold">${title}</h1>
-        <p class="card-text fw-bold">${artist}</p>
-        <p class="card-text fw-bold">Ascolta il nuovo singolo di ${artist}!</p>
+        <p class="card-text"><a class="text-decoration-none text-secondary fw-bold" href=artist.html?id=${id}>${artist}</a></p>
+        <p class="card-text fw-bold">Ascolta il nuovo singolo di <a class="text-decoration-none text-light" href=artist.html?id=${id}>${artist}</a>!</p>
         <div class="d-flex gap-2">
           <button style="background-color: #1ed760" class="btn px-4 py-2 rounded-pill fw-bold">Play</button>
           <button
