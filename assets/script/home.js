@@ -1,4 +1,4 @@
-const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=salmo";
+const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
 
 window.onload = function () {
   richiesta(url);
