@@ -18,6 +18,7 @@ const richiesta = url => {
       const fans = artista.nb_fan;
       const ascoltatori = fans.toLocaleString(undefined, { minimumFractionDigits: 0 });
       createCardPrincipale(artista.name, artista.picture_xl, ascoltatori);
+      creaLike(artista.picture_medium, artista.name);
     })
     .catch(error => console.log(error));
 };
@@ -94,4 +95,27 @@ const creaCanzone = (title, img, riproduzioni, min, sec) => {
 
   row.innerHTML += html;
   i++;
+};
+
+const creaLike = (img, artist) => {
+  const col = document.querySelector("#like");
+  col.innerHTML = `<h3 class="text-white fs-5 fw-bold ms-5 mb-4">Brani che ti piacciono</h3>
+    <div class="d-flex ms-5">
+      <div class="position-relative">
+        <i class="bi bi-heart-fill position-absolute text-white end-0 bottom-0 z-2"></i>
+        <img
+          src="${img}"
+          alt="${artist}"
+          class="rounded-circle"
+          height="80px"
+          width="80px"
+        />
+        <span id="hearthBg"></span>
+      </div>
+
+      <div style="min-width: 160px" class="px-3 d-flex flex-column justify-content-center">
+        <h6 class="text-white">Hai messo mi piace a 11 brani</h6>
+        <p class="light-gray">Di ${artist}</p>
+      </div>
+    </div>`;
 };
