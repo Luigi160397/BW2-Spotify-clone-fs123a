@@ -39,6 +39,22 @@ const richiesta2 = url => {
         const sec = durations % 60;
 
         creaCanzone(canzone.title_short, canzone.album.cover_small, riproduzioni, min, sec);
+        const righe = document.querySelectorAll("#riga");
+        for (const riga of righe) {
+          riga.addEventListener("mouseenter", event => {
+            const icone = riga.querySelectorAll(".icone");
+            icone.forEach(icona => {
+              icona.style.opacity = "1";
+            });
+          });
+
+          riga.addEventListener("mouseleave", event => {
+            const icone = riga.querySelectorAll(".icone");
+            icone.forEach(icona => {
+              icona.style.opacity = "0";
+            });
+          });
+        }
       }
     })
     .catch(error => console.log(error));
@@ -75,7 +91,8 @@ const createCardPrincipale = (artist, img, ascoltatori) => {
 let i = 1;
 const creaCanzone = (title, img, riproduzioni, min, sec) => {
   const row = document.querySelector("#tracks");
-  const html = `<div class="row mb-3 justify-content-between justify-content-lg-start">
+  const html = `<div id='riga' class="row mb-3 justify-content-between align-items-center justify-content-lg-start position-relative">
+  <i id='playIcon' style='left:7px' class="bi bi-play-fill position-absolute d-none fs-2"></i>
   <div class="col-1 text-end light-gray">${i}</div>
   <div class="col-7 col-xl-4 d-flex gap-2 align-items-center">
     <img src="${img}" alt="${title}" />
@@ -87,7 +104,11 @@ const creaCanzone = (title, img, riproduzioni, min, sec) => {
   <div class="col-3 d-none d-xl-block">
     <small class="light-gray">${riproduzioni}</small>
   </div>
-  <div class="col-3 text-end light-gray d-none d-lg-block">${min}:${sec}</div>
+  <div class="col-3 text-end light-gray d-none d-lg-block">
+  <span style='opacity: 0' class="icone me-3"><i class="bi bi-heart"></i></span>
+    ${min}:${sec}
+    <span style='opacity: 0' class="icone ms-3"><i class="bi bi-three-dots"></i></span>
+  </div>
   <div class="col-3 text-end light-gray d-block d-lg-none">
     <i class="bi bi-three-dots-vertical"></i>
   </div>

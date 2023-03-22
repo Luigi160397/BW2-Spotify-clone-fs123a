@@ -17,15 +17,27 @@ nav {
     right: 0;
   }
 }
+
 #playBtn {
   border: 0;
   background-color: #1ed760;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+
+#playBtn:hover {
+  transform: scale(1.05);
 }
 
 #moreBtn {
   border: 0;
   background-color: transparent;
-  fill: #cac7bc;
+  fill: rgba(255, 255, 255, 0.733);
+  transition: fill 0.2s ease-in-out;
+}
+
+#moreBtn:hover {
+  fill: white;
 }
 
 #artistBanner {
@@ -92,4 +104,25 @@ nav {
     bottom: -35px;
     background-color: #131313de !important;
   }
+}
+
+#aside-sx button,
+#aside-sx i,
+#aside-sx a,
+#aside-sx span,
+#card-principale #dots {
+  color: rgba(255, 255, 255, 0.733) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+#aside-sx button:hover,
+#aside-sx a:hover,
+#aside-sx i:hover,
+#aside-sx span:hover,
+#card-principale #dots:hover {
+  color: white !important;
+}
+
+#riga:hover > #playIcon {
+  display: block !important;
 }
