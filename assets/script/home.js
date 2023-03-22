@@ -4,6 +4,7 @@ window.onload = function () {
   richiesta(url);
 };
 
+const spinner = document.querySelector("#spinner");
 const richiesta = url => {
   fetch(url)
     .then(res => res.json())
@@ -16,6 +17,7 @@ const richiesta = url => {
       row3.innerHTML = "";
       const row4 = document.querySelector("#recenti");
       row4.innerHTML = "";
+      spinner.style.display = "none";
       const canzoni = data.data;
       shuffle(canzoni);
       createCardPrincipale(
@@ -29,10 +31,16 @@ const richiesta = url => {
         const canzone = canzoni[i];
         createCardPlaylist(canzone.title, canzone.artist.picture_medium);
       }
-      for (let i = 6; i < 11; i++) {
+      for (let i = 6; i < 10; i++) {
         const canzone = canzoni[i];
         createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id);
-        createCard2(canzone.album.title, canzone.album.cover_medium, canzone.artist.name, canzone.artist.id);
+        createCard2(
+          canzone.album.title,
+          canzone.album.cover_medium,
+          canzone.artist.name,
+          canzone.album.id,
+          canzone.artist.id
+        );
       }
     })
     .catch(error => console.log(error));
@@ -44,19 +52,20 @@ const createCardPlaylist = (title, img) => {
   col1.setAttribute("class", "col");
   row1.appendChild(col1);
 
-  col1.innerHTML = `<div style="background-color: #363636" class="card mb-3 border-0 text-light rounded-2">
-    <div class="row g-0">
-      <div class="col-md-2">
+  col1.innerHTML = `<div id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2">
+    <div class="row g-0"   style="flex-wrap: nowrap;">
+      <div class="col-md-4" style="max-width: 100px;">
         <img
-          style="min-height: 70px; min-width: 70px"
+          id="imgMobile"
+          style="min-height: 60px; min-width: 60px"
           src="${img}"
           class="img-fluid rounded-start"
           alt="pic"
         />
       </div>
-      <div class="col-md-10">
+      <div class="col-md-8" style="max-width: 73%;">
         <div class="card-body">
-          <h5 class="card-text fw-bold fs-6">${title}</h5>
+          <h5 class="card-text text-truncate fw-bold fs-6">${title}</h5>
         </div>
       </div>
     </div>
@@ -82,7 +91,7 @@ const createCard = (title, img, artist, id) => {
   </div>`;
 };
 
-const createCard2 = (album, img, artist, id) => {
+const createCard2 = (album, img, artist, idAlbum, idArtist) => {
   const row2 = document.querySelector(`#recenti`);
   const col2 = document.createElement("div");
   col2.setAttribute("class", "col");
@@ -94,8 +103,8 @@ const createCard2 = (album, img, artist, id) => {
           <img src="${img}" class="card-img img-fluid" alt="${album}" />
         </div>
         <div class="card-body px-4">
-          <h5 class="card-title fs-5 text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${id}>${album}</a></h5>
-          <p class="card-text"><a class="text-decoration-none text-secondary" href=artist.html?id=${id}>${artist}</a></p>
+          <h5 class="card-title fs-5 text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${idAlbum}>${album}</a></h5>
+          <p class="card-text"><a class="text-decoration-none text-secondary" href=artist.html?id=${idArtist}>${artist}</a></p>
         </div>
       </div>
     </div>`;
@@ -109,8 +118,8 @@ const createCardPrincipale = (title, img, artist, id, album) => {
     </div>
     <div class="col-6">
       <div class="card-body">
-        <h6 class="card-title fw-bold"><a class="text-decoration-none text-light" href=album.html?id=${id}>${album}</a></h6>
-        <h1 class="card-title fw-bold">${title}</h1>
+        <h6 class="card-title fw-bold text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${id}>${album}</a></h6>
+        <h1 class="card-title fw-bold text-truncate">${title}</h1>
         <p class="card-text"><a class="text-decoration-none text-light fw-bold" href=artist.html?id=${id}>${artist}</a></p>
         <p class="card-text fw-bold">Ascolta il nuovo singolo di <a class="text-decoration-none text-light" href=artist.html?id=${id}>${artist}</a>!</p>
         <div class="d-flex gap-2">
@@ -138,8 +147,19 @@ const shuffle = array => {
   return array;
 };
 
-const btnSearch = document.querySelector("#search");
-btnSearch.addEventListener("click", event => {
+const showBtn = () => {
+  const form = document.querySelector("#form-input");
+  if (form.style.display === "block") {
+    form.style.display = "none";
+  } else {
+    form.style.display = "block";
+    const input = document.querySelector("#input-search");
+    input.focus();
+  }
+};
+
+const form = document.querySelector("#form-input");
+form.addEventListener("submit", event => {
   event.preventDefault();
   const cerca = document.querySelector("#input-search").value;
   const payload = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${cerca}`;

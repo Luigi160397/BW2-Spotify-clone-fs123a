@@ -16,17 +16,22 @@
   </head>
   <body>
     <div class="container-fluid d-flex p-0 bg-dark">
-      <aside style="height: 100%; width: 300px; position: fixed; z-index: 9999; top: 0; left: 0">
-        <button class="btn rounded-pill fw-bold text-light">
+      <aside id="aside-sx" class="d-flex flex-column align-items-start">
+        <button class="btn rounded-pill fw-bold text-light d-none d-md-block">
           <i class="bi bi-three-dots text-secondary fs-3"></i>
         </button>
-        <div class="d-flex align-items-center gap-2 ps-3">
+        <div class="d-flex align-items-center gap-2 ps-3 flex-column flex-md-row">
           <a href="#"><i class="bi bi-house-door-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">Home</a>
         </div>
         <div class="btn-group dropend">
-          <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
-            <a href="#"><i class="bi bi-search fs-4 text-decoration-none text-secondary ps-1 me-1"></i></a>
+          <button
+            type="button"
+            class="btn d-flex align-items-center gap-2 ps-3 flex-column flex-md-row py-0"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <a href="#"><i class="bi bi-search fs-4 text-decoration-none text-secondary"></i></a>
             <a href="#" class="text-decoration-none text-secondary">Cerca</a>
           </button>
           <div class="dropdown-menu dropdown-menu-dark">
@@ -43,28 +48,25 @@
             </form>
           </div>
         </div>
-        <div class="d-flex align-items-center gap-2 ps-3 pb-5">
+        <div class="d-flex align-items-center gap-2 ps-0 ps-md-3 pb-5 flex-column flex-md-row">
           <a href="#"><i class="bi bi-collection-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">La tua Libreria</a>
         </div>
-        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2 d-none d-md-block">
           <a href="#"><i class="bi bi-plus-square-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">Crea playlist</a>
         </div>
-        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2 d-none d-md-block">
           <a href="#"><i class="bi bi-suit-heart-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">Brani che ti piacciono</a>
         </div>
-        <div class="d-flex align-items-center gap-2 ps-3 pb-2">
+        <div class="d-flex align-items-center gap-2 ps-3 pb-2 d-none d-md-block">
           <a href="#"><i class="bi bi-bookmark-fill fs-4 text-decoration-none text-secondary"></i></a>
           <a href="#" class="text-decoration-none text-secondary">I tuoi episodi</a>
         </div>
       </aside>
-      <main style="margin-left: 300px; margin-right: 250px" class="container-fluid px-0">
-        <nav
-          style="top: 0; right: 250px; left: 300px; z-index: 9999; background-color: #1313132a"
-          class="navbar position-fixed"
-        >
+      <main class="container-fluid px-0">
+        <nav class="navbar position-fixed">
           <div class="container-fluid justify-content-start px-0">
             <a style="background-color: #131313; margin-right: 8px" class="text-light rounded-circle fs-3 px-2" href="#"
               ><i class="bi bi-arrow-left-short"></i
@@ -76,17 +78,18 @@
         </nav>
         <div id="albumInfo" class="container-fluid">
           <div class="row">
-            <div class="col-3">
+            <div class="col-12 col-lg-6 align-self-center pb-3 pb-lg-0">
               <img
+                style="min-height: 200px; min-width: 200px"
                 id="cover"
                 class="img-fluid"
                 src="https://m.media-amazon.com/images/I/51pZ2ah+f8L.jpg"
                 alt="Album cover"
               />
             </div>
-            <div class="col-9 text-white d-flex flex-column justify-content-end">
+            <div class="col-9 col-lg-5 text-white d-flex flex-column justify-content-end align-self-center">
               <h3 id="type" class="small fw-semibold m-0">ALBUM</h3>
-              <h2 class="display-1 fw-bold mb-4">Gioventù brucata</h2>
+              <h2 id="titolo-card" class="display-1 fw-bold mb-4">Gioventù brucata</h2>
               <div>
                 <img
                   class="img-fluid rounded-circle"
@@ -147,7 +150,7 @@
                   />
                 </svg>
               </button>
-              <button id="moreBtn" class="p-2 rounded-circle me-1">
+              <button id="moreBtn" class="p-2 rounded-circle me-1 d-none d-lg-inline-block">
                 <svg
                   role="img"
                   height="32"
@@ -162,8 +165,23 @@
                   ></path>
                 </svg>
               </button>
+              <button id="moreBtn" class="p-2 rounded-circle me-1 d-inline-block d-lg-none">
+                <svg
+                  role="img"
+                  height="32"
+                  width="32"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  data-encore-id="icon"
+                  class="Svg-sc-ytk21e-0 gQUQL"
+                >
+                  <path
+                    d="M10.5 4.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0zm0 15a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0zm0-7.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0z"
+                  ></path>
+                </svg>
+              </button>
             </div>
-            <div class="row mb-1 mt-4 light-gray">
+            <div class="row mb-1 mt-4 light-gray d-none d-lg-flex">
               <div class="col-1 fw-semibold songNumber">#</div>
               <div class="col-4 fw-semibold">TITOLO</div>
               <div class="col-3 text-end fw-semibold">RIPRODUZIONI</div>
@@ -184,82 +202,95 @@
               </div>
             </div>
             <hr />
-            <div class="row mb-2">
-              <div class="col-1 songNumber">1</div>
-              <div class="col-4">
-                <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
-                <small class="light-gray">Dolor sit amet</small>
+            <div id="row-canzoni" class="container-fluid px-0">
+              <div class="row mb-2 justify-content-between justify-content-lg-start">
+                <div class="col-1 songNumber d-none d-lg-block">1</div>
+                <div class="col-4">
+                  <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
+                  <small class="light-gray">Dolor sit amet</small>
+                </div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">3.694.578</div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">2:23</div>
+                <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
               </div>
-              <div class="col-3 text-end light-gray">3.694.578</div>
-              <div class="col-3 text-end light-gray">2:23</div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">2</div>
-              <div class="col-4">
-                <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
-                <small class="light-gray">Dolor sit amet</small>
+              <div class="row mb-2 justify-content-between justify-content-lg-start">
+                <div class="col-1 songNumber d-none d-lg-block">2</div>
+                <div class="col-4">
+                  <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
+                  <small class="light-gray">Dolor sit amet</small>
+                </div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">543.278</div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">4:18</div>
+                <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
               </div>
-              <div class="col-3 text-end light-gray">543.278</div>
-              <div class="col-3 text-end light-gray">4:18</div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">3</div>
-              <div class="col-4">
-                <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
-                <small class="light-gray">Dolor sit amet</small>
+              <div class="row mb-2 justify-content-between justify-content-lg-start">
+                <div class="col-1 songNumber d-none d-lg-block">3</div>
+                <div class="col-4">
+                  <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
+                  <small class="light-gray">Dolor sit amet</small>
+                </div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">234.578</div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">1:28</div>
+                <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
               </div>
-              <div class="col-3 text-end light-gray">234.578</div>
-              <div class="col-3 text-end light-gray">1:28</div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">4</div>
-              <div class="col-4">
-                <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
-                <small class="light-gray">Dolor sit amet</small>
+              <div class="row mb-2 justify-content-between justify-content-lg-start">
+                <div class="col-1 songNumber d-none d-lg-block">4</div>
+                <div class="col-4">
+                  <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
+                  <small class="light-gray">Dolor sit amet</small>
+                </div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">100.378</div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">1:08</div>
+                <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
               </div>
-              <div class="col-3 text-end light-gray">100.378</div>
-              <div class="col-3 text-end light-gray">1:08</div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">5</div>
-              <div class="col-4">
-                <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
-                <small class="light-gray">Dolor sit amet</small>
+              <div class="row mb-2 justify-content-between justify-content-lg-start">
+                <div class="col-1 songNumber d-none d-lg-block">5</div>
+                <div class="col-4">
+                  <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
+                  <small class="light-gray">Dolor sit amet</small>
+                </div>
+                <div class="col-3 text-end light-gray light-gray d-none d-lg-block">123.223</div>
+                <div class="col-3 text-end light-gray light-gray d-none d-lg-block">2:38</div>
+                <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
               </div>
-              <div class="col-3 text-end light-gray light-gray">123.223</div>
-              <div class="col-3 text-end light-gray light-gray">2:38</div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">6</div>
-              <div class="col-4">
-                <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
-                <small class="light-gray">Dolor sit amet</small>
+              <div class="row mb-2 justify-content-between justify-content-lg-start">
+                <div class="col-1 songNumber d-none d-lg-block">6</div>
+                <div class="col-4">
+                  <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
+                  <small class="light-gray">Dolor sit amet</small>
+                </div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">634.586</div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">1:22</div>
+                <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
               </div>
-              <div class="col-3 text-end light-gray">634.586</div>
-              <div class="col-3 text-end light-gray">1:22</div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">7</div>
-              <div class="col-4">
-                <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
-                <small class="light-gray">Dolor sit amet</small>
+              <div class="row mb-2 justify-content-between justify-content-lg-start">
+                <div class="col-1 songNumber d-none d-lg-block">7</div>
+                <div class="col-4">
+                  <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
+                  <small class="light-gray">Dolor sit amet</small>
+                </div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">454.278</div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">1:25</div>
+                <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
               </div>
-              <div class="col-3 text-end light-gray">454.278</div>
-              <div class="col-3 text-end light-gray">1:25</div>
-            </div>
-            <div class="row mb-2">
-              <div class="col-1 songNumber">8</div>
-              <div class="col-4">
-                <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
-                <small class="light-gray">Dolor sit amet</small>
+              <div class="row mb-2 justify-content-between justify-content-lg-start">
+                <div class="col-1 songNumber d-none d-lg-block">8</div>
+                <div class="col-4">
+                  <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
+                  <small class="light-gray">Dolor sit amet</small>
+                </div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">643.342</div>
+                <div class="col-3 text-end light-gray d-none d-lg-block">1:22</div>
+                <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
               </div>
-              <div class="col-3 text-end light-gray">643.342</div>
-              <div class="col-3 text-end light-gray">1:22</div>
             </div>
           </div>
         </div>
       </main>
-      <aside style="height: 100%; width: 240px; position: fixed; z-index: 1; top: 0; right: 0">
+      <aside
+        class="d-none d-lg-block"
+        style="height: 100%; width: 240px; position: fixed; z-index: 1; top: 0; right: 0"
+      >
         <div class="d-flex align-items-center justify-content-between px-3 py-3 pb-5 text-light">
           <p>Attività amici</p>
           <p>
@@ -303,5 +334,6 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script src="assets/script/album.js"></script>
   </body>
 </html>
