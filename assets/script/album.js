@@ -111,12 +111,4 @@ const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist) => {
 
   row.innerHTML += html;
   i++;
-  const riga = document.querySelector(".songNumber");
-  riga.addEventListener("mouseenter", event => {
-    riga.innerHTML = '<i class="bi bi-play-fill"></i>';
-  });
-
-  riga.addEventListener("mouseleave", event => {
-    riga.innerHTML = `${i}`;
-  });
 };
