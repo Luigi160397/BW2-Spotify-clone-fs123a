@@ -9,7 +9,7 @@ nav {
   z-index: 9999;
   background-color: #1313132a;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1199px) {
   #main {
     margin-right: 0 !important;
   }
