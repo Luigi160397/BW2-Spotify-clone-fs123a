@@ -25,7 +25,8 @@ const richiesta = url => {
         canzoni[0].artist.picture_medium,
         canzoni[0].artist.name,
         canzoni[0].artist.id,
-        canzoni[0].album.title
+        canzoni[0].album.title,
+        canzoni[0].album.id
       );
       for (let i = 0; i < 6; i++) {
         const canzone = canzoni[i];
@@ -110,7 +111,7 @@ const createCard2 = (album, img, artist, idAlbum, idArtist) => {
     </div>`;
 };
 
-const createCardPrincipale = (title, img, artist, id, album) => {
+const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum) => {
   const cardPrincipale = document.querySelector("#card-principale");
   cardPrincipale.innerHTML = `<div class="row g-0">
     <div class="col-2">
@@ -118,10 +119,10 @@ const createCardPrincipale = (title, img, artist, id, album) => {
     </div>
     <div class="col-6">
       <div class="card-body">
-        <h6 class="card-title fw-bold text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${id}>${album}</a></h6>
+        <h6 class="card-title fw-bold text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${idAlbum}>${album}</a></h6>
         <h1 class="card-title fw-bold text-truncate">${title}</h1>
-        <p class="card-text"><a class="text-decoration-none text-light fw-bold" href=artist.html?id=${id}>${artist}</a></p>
-        <p class="card-text fw-bold">Ascolta il nuovo singolo di <a class="text-decoration-none text-light" href=artist.html?id=${id}>${artist}</a>!</p>
+        <p class="card-text"><a class="text-decoration-none text-light fw-bold" href=artist.html?id=${idArtist}>${artist}</a></p>
+        <p class="card-text fw-bold">Ascolta il nuovo singolo di <a class="text-decoration-none text-light" href=artist.html?id=${idArtist}>${artist}</a>!</p>
         <div class="d-flex gap-2">
           <button style="background-color: #1ed760" class="btn px-4 py-2 rounded-pill fw-bold">Play</button>
           <button
