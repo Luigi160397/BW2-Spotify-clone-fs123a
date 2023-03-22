@@ -1,13 +1,16 @@
+main {
+  background: #212529;
+  background: linear-gradient(0deg, rgba(33, 37, 41, 0) 55%, rgba(230, 198, 82, 1) 100%);
+}
+
 #albumInfo {
-  background: linear-gradient(180deg, rgba(230, 198, 82, 1) 0%, rgba(118, 102, 42, 1) 100%);
-  padding-bottom: 20rem;
+  padding-bottom: 2rem;
   padding-inline: 2rem;
   padding-top: 2rem;
 }
 
 #albumContent {
-  background: rgb(18, 18, 18);
-  background: linear-gradient(180deg, rgba(18, 18, 18, 0.26213813161983546) 0%, rgba(18, 18, 18, 1) 38%);
+  background: rgba(18, 18, 18, 0.26213813161983546);
   top: -15em;
   right: 0;
   left: 0;
