@@ -1,27 +1,35 @@
 #contenuto {
   margin-left: 300px !important;
-  margin-right: 250px !important;
+  margin-right: 230px !important;
 }
 
 nav {
   top: 0;
-  right: 250px;
+  right: 230px;
   left: 300px;
   z-index: 9999;
+  height: 64px;
   background-color: #1313132a;
 }
 
 #aside-dx {
   display: none;
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  padding-left: 10px;
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1199px) {
   #aside-dx {
     display: block;
   }
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1199px) {
   #contenuto {
     margin-right: 0 !important;
   }

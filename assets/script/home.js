@@ -54,7 +54,7 @@ const createCardPlaylist = (title, img) => {
 
   col1.innerHTML = `<div id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2">
     <div class="row g-0"   style="flex-wrap: nowrap;">
-      <div class="col-md-4" style="max-width: 100px;">
+      <div class="col-4 col-md-4">
         <img
           id="imgMobile"
           style="min-height: 60px; min-width: 60px"
@@ -63,7 +63,7 @@ const createCardPlaylist = (title, img) => {
           alt="pic"
         />
       </div>
-      <div class="col-md-8" style="max-width: 73%;">
+      <div class="col-8 col-md-8">
         <div class="card-body">
           <h5 class="card-text text-truncate fw-bold fs-6">${title}</h5>
         </div>
