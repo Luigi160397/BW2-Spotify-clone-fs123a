@@ -91,8 +91,8 @@ const createCardPrincipale = (artist, img, ascoltatori) => {
 let i = 1;
 const creaCanzone = (title, img, riproduzioni, min, sec) => {
   const row = document.querySelector("#tracks");
-  const html = `<div id='riga' class="row mb-3 justify-content-between align-items-center justify-content-lg-start position-relative">
-  <i id='playIcon' style='left:7px' class="bi bi-play-fill position-absolute d-none fs-2"></i>
+  const html = `<div id='riga' class="row mb-3 justify-content-between align-items-center justify-content-lg-start p-1 rounded-2 position-relative">
+  <i id='playIcon' style='left:10px' class="bi bi-play-fill position-absolute d-none fs-2"></i>
   <div class="col-1 text-end light-gray">${i}</div>
   <div class="col-7 col-xl-4 d-flex gap-2 align-items-center">
     <img src="${img}" alt="${title}" />
