@@ -1,10 +1,10 @@
 #main {
   margin-left: 300px !important;
-  margin-right: 250px !important;
+  margin-right: 240px !important;
 }
 nav {
   top: 0;
-  right: 250px;
+  right: 240px;
   left: 300px;
   z-index: 9999;
   background-color: #1313132a;
@@ -27,12 +27,13 @@ nav {
   background-color: transparent;
   fill: #cac7bc;
 }
+
 #artistBanner {
   background-image: url("https://media.timeout.com/images/103733283/750/422/image.jpg");
   background-position-y: -70px;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 10rem;
+  padding-top: 12rem;
 }
 
 #verifiedIcon {
@@ -89,6 +90,6 @@ nav {
     width: 100%;
     top: auto;
     bottom: -35px;
-    background-color: #131313de;
+    background-color: #131313de !important;
   }
 }
