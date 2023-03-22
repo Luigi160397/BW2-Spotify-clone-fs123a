@@ -2,9 +2,11 @@ const queryParams = new URLSearchParams(window.location.search);
 const id = queryParams.get("id");
 
 const payload = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}`;
+const payload2 = `https://striveschool-api.herokuapp.com/api/deezer/artist/${id}/top?limit=50`;
 
 window.onload = () => {
   richiesta(payload);
+  richiesta2(payload2);
 };
 
 const richiesta = url => {
@@ -16,15 +18,27 @@ const richiesta = url => {
       const fans = artista.nb_fan;
       const ascoltatori = fans.toLocaleString(undefined, { minimumFractionDigits: 0 });
       createCardPrincipale(artista.name, artista.picture_xl, ascoltatori);
-      //   for (const canzone of album.tracks.data) {
-      //     const rank = canzone.rank;
-      //     const riproduzioni = rank.toLocaleString(undefined, { minimumFractionDigits: 0 });
-      //     const durations = canzone.duration;
-      //     const min = Math.floor(durations / 60);
-      //     const sec = durations % 60;
+    })
+    .catch(error => console.log(error));
+};
 
-      //     creaCanzone(canzone.title, canzone.artist.name, riproduzioni, min, sec);
-      //   }
+const richiesta2 = url => {
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      const canzoni = data.data;
+      const row = document.querySelector("#tracks");
+      row.innerHTML = "";
+
+      for (const canzone of canzoni) {
+        const rank = canzone.rank;
+        const riproduzioni = rank.toLocaleString(undefined, { minimumFractionDigits: 0 });
+        const durations = canzone.duration;
+        const min = Math.floor(durations / 60);
+        const sec = durations % 60;
+
+        creaCanzone(canzone.title, canzone.album.cover_small, riproduzioni, min, sec);
+      }
     })
     .catch(error => console.log(error));
 };
@@ -58,21 +72,21 @@ const createCardPrincipale = (artist, img, ascoltatori) => {
 };
 
 let i = 1;
-const creaCanzone = (title, riproduzioni, min, sec) => {
+const creaCanzone = (title, img, riproduzioni, min, sec) => {
   const row = document.querySelector("#tracks");
   const html = `<div class="row mb-3 justify-content-between justify-content-lg-start">
-  <div class="col-1 text-end light-gray">1</div>
+  <div class="col-1 text-end light-gray">${i}</div>
   <div class="col-7 col-xl-4 d-flex gap-2 align-items-center">
-    <img src="https://picsum.photos/seed/picsum/40/40" alt="Album cover" />
+    <img src="${img}" alt="${title}" />
     <span>
-      <h3 class="fs-6 fw-bold mb-0">Lorem ipsum</h3>
-      <small class="d-block d-xl-none light-gray">2.368.942</small>
+      <h3 class="fs-6 fw-bold mb-0">${title}</h3>
+      <small class="d-block d-xl-none light-gray">${riproduzioni}</small>
     </span>
   </div>
   <div class="col-3 d-none d-xl-block">
-    <small class="light-gray">2.368.942</small>
+    <small class="light-gray">${riproduzioni}</small>
   </div>
-  <div class="col-3 text-end light-gray d-none d-lg-block">3:18</div>
+  <div class="col-3 text-end light-gray d-none d-lg-block">${min}:${sec}</div>
   <div class="col-3 text-end light-gray d-block d-lg-none">
     <i class="bi bi-three-dots-vertical"></i>
   </div>
