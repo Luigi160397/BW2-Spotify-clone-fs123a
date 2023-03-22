@@ -111,3 +111,80 @@ nav {
     background-color: #131313de;
   }
 }
+
+#aside-sx button,
+#aside-sx i,
+#aside-sx a,
+#aside-sx span,
+#card-principale #dots {
+  color: rgba(255, 255, 255, 0.733) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+#aside-sx button:hover,
+#aside-sx a:hover,
+#aside-sx i:hover,
+#aside-sx span:hover,
+#card-principale #dots:hover {
+  color: white !important;
+}
+
+#card-principale h1:hover {
+  text-decoration: underline !important;
+}
+
+#play,
+#playBtn {
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+
+#play:hover,
+#playBtn:hover {
+  transform: scale(1.05);
+}
+
+#salva {
+  transform: scale(1);
+  border-color: rgba(255, 255, 255, 0.733) !important;
+  transition: transform 0.1s ease-in-out, border-color 0.1s ease-in-out;
+}
+
+#salva:hover {
+  transform: scale(1.05);
+  border-color: white !important;
+}
+
+#cardsPlaylist {
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#cardsPlaylist:hover {
+  transform: scale(1.05);
+}
+
+#canzoni {
+  background-color: #161616 !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#canzoni:hover {
+  background-color: #363636 !important;
+}
+
+#canzoni:hover > #playBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#playBtn {
+  border: 0;
+  background-color: #1ed760;
+  bottom: 100px;
+  right: 10px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}

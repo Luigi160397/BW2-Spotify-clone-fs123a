@@ -80,9 +80,24 @@ const createCard = (title, img, artist, id) => {
   row2.appendChild(col2);
 
   col2.innerHTML = `<div class="col">
-    <div style="background-color: #171717" class="card border-0 text-light">
+    <div id='canzoni' style="background-color: #171717" class="card border-0 text-light position-relative">
+    <button id="playBtn" class="p-2 rounded-circle me-4 position-absolute">
+                <svg
+                  role="img"
+                  height="32"
+                  width="32"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  data-encore-id="icon"
+                  class="Svg-sc-ytk21e-0 uPxdw"
+                >
+                  <path
+                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                  ></path>
+                </svg>
+              </button>
       <div class="px-4 pt-4 pb-1 rounded-3">
-        <img src="${img}" class="card-img img-fluid" alt="${title}" />
+        <img src="${img}" class="card-img img-fluid shadow" alt="${title}" />
       </div>
       <div class="card-body px-4">
         <h5 class="card-title fs-5 text-truncate">${title}</h5>
@@ -99,9 +114,24 @@ const createCard2 = (album, img, artist, idAlbum, idArtist) => {
   row2.appendChild(col2);
 
   col2.innerHTML = `<div class="col">
-      <div style="background-color: #171717" class="card border-0 text-light">
+      <div id='canzoni' style="background-color: #171717" class="card border-0 text-light position-relative">
+      <button id="playBtn" class="p-2 rounded-circle me-4 position-absolute">
+            <svg
+              role="img"
+              height="32"
+              width="32"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 uPxdw"
+            >
+              <path
+                d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+              ></path>
+            </svg>
+          </button>
         <div class="px-4 pt-4 pb-1 rounded-3">
-          <img src="${img}" class="card-img img-fluid" alt="${album}" />
+          <img src="${img}" class="card-img img-fluid shadow" alt="${album}" />
         </div>
         <div class="card-body px-4">
           <h5 class="card-title fs-5 text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${idAlbum}>${album}</a></h5>
@@ -120,19 +150,20 @@ const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum) => {
     <div class="col-6">
       <div class="card-body">
         <h6 class="card-title fw-bold text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${idAlbum}>${album}</a></h6>
-        <h1 class="card-title fw-bold text-truncate">${title}</h1>
+        <h1 class="card-title fw-bold text-truncate"><a class="text-decoration-none text-light" href=#>${title}</a></h1>
         <p class="card-text"><a class="text-decoration-none text-light fw-bold" href=artist.html?id=${idArtist}>${artist}</a></p>
         <p class="card-text fw-bold">Ascolta il nuovo singolo di <a class="text-decoration-none text-light" href=artist.html?id=${idArtist}>${artist}</a>!</p>
         <div class="d-flex gap-2">
-          <button style="background-color: #1ed760" class="btn px-4 py-2 rounded-pill fw-bold">Play</button>
+          <button id='play' style="background-color: #1ed760" class="border-0 px-4 py-2 rounded-pill fw-bold">Play</button>
           <button
+          id='salva'
             style="background-color: #2125297c"
-            class="btn px-4 py-2 rounded-pill fw-bold text-light border border-1 border-light"
+            class="px-4 py-2 rounded-pill fw-bold text-light border border-1 border-light"
           >
             Salva
           </button>
           <button class="btn rounded-pill fw-bold text-light">
-            <i class="bi bi-three-dots text-secondary fs-3"></i>
+            <i id='dots' class="bi bi-three-dots text-secondary fs-3"></i>
           </button>
         </div>
       </div>
