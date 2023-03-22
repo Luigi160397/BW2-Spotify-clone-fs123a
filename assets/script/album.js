@@ -113,3 +113,7 @@ const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist) => {
   row.innerHTML += html;
   i++;
 };
+
+const apriCerca = () => {
+  window.location.href = "index.html?form=1";
+};

@@ -119,3 +119,7 @@ const creaLike = (img, artist) => {
       </div>
     </div>`;
 };
+
+const apriCerca = () => {
+  window.location.href = "index.html?form=1";
+};

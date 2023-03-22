@@ -2,6 +2,11 @@ const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
 
 window.onload = function () {
   richiesta(url);
+  const Params = new URLSearchParams(window.location.search);
+  const form = Params.get("form");
+  if (form === "1") {
+    showBtn();
+  }
 };
 
 const spinner = document.querySelector("#spinner");
