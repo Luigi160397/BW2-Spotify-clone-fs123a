@@ -101,7 +101,7 @@ const createCard = (title, img, artist, id) => {
       </div>
       <div class="card-body px-4">
         <h5 class="card-title fs-5 text-truncate">${title}</h5>
-        <p class="card-text"><a class="text-decoration-none text-secondary" href=artist.html?id=${id}>${artist}</a></p>
+        <p class="card-text"><a id='artista' class="text-decoration-none text-secondary" href=artist.html?id=${id}>${artist}</a></p>
       </div>
     </div>
   </div>`;
@@ -135,7 +135,7 @@ const createCard2 = (album, img, artist, idAlbum, idArtist) => {
         </div>
         <div class="card-body px-4">
           <h5 class="card-title fs-5 text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${idAlbum}>${album}</a></h5>
-          <p class="card-text"><a class="text-decoration-none text-secondary" href=artist.html?id=${idArtist}>${artist}</a></p>
+          <p class="card-text"><a id='artista' class="text-decoration-none text-secondary" href=artist.html?id=${idArtist}>${artist}</a></p>
         </div>
       </div>
     </div>`;

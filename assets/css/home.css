@@ -129,7 +129,8 @@ nav {
   color: white !important;
 }
 
-#card-principale h1:hover {
+#card-principale h1:hover,
+#artista:hover {
   text-decoration: underline !important;
 }
 
