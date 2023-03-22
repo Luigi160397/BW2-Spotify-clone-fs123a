@@ -1,91 +1,94 @@
-#main{
-    margin-left: 300px !important;
-    margin-right: 250px !important;
+#main {
+  margin-left: 300px !important;
+  margin-right: 250px !important;
 }
-nav{
-    top: 0;
-    right: 250px;
-    left: 300px;
-    z-index: 9999;
-    background-color: #1313132a;
+nav {
+  top: 0;
+  right: 250px;
+  left: 300px;
+  z-index: 9999;
+  background-color: #1313132a;
 }
-@media screen and (max-width: 991px){
-    #main{
-        margin-right: 0 !important;
-    }
-    nav{
-        right: 0;
-    }
+@media screen and (max-width: 991px) {
+  #main {
+    margin-right: 0 !important;
+  }
+  nav {
+    right: 0;
+  }
 }
 #playBtn {
-    border: 0;
-    background-color: #1ed760;
-  }
-
-  #moreBtn {
-    border: 0;
-    background-color: transparent;
-    fill: #cac7bc;
-  }
-  #artistBanner {
-    background-image: url("https://media.timeout.com/images/103733283/750/422/image.jpg");
-    padding-top: 10rem;
-  }
-
-  #verifiedIcon {
-    fill: #0c67d3;
-  }
-
-  #verifyBg {
-    display: block;
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    height: 15px;
-    width: 15px;
-    top: 7px;
-    left: 5px;
-    z-index: 1;
-  }
-
-  #hearthBg {
-    display: block;
-    position: absolute;
-    background-color: #2dbe60;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    bottom: 2px;
-    right: -3px;
-    z-index: 1;
-  }
-
-  .light-gray {
-    color: #a9a9a8;
-  }
-  #aside-sx{
-    height: 100%;
-    width: 300px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
+  border: 0;
+  background-color: #1ed760;
 }
-@media screen and (max-width: 767px){
-#main{
-  margin-left: 0 !important;
-  padding-bottom: 50px !important;
+
+#moreBtn {
+  border: 0;
+  background-color: transparent;
+  fill: #cac7bc;
 }
-nav{
+#artistBanner {
+  background-image: url("https://media.timeout.com/images/103733283/750/422/image.jpg");
+  background-position-y: -70px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 10rem;
+}
+
+#verifiedIcon {
+  fill: #0c67d3;
+}
+
+#verifyBg {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  top: 7px;
+  left: 5px;
+  z-index: 1;
+}
+
+#hearthBg {
+  display: block;
+  position: absolute;
+  background-color: #2dbe60;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  bottom: 2px;
+  right: -3px;
+  z-index: 1;
+}
+
+.light-gray {
+  color: #a9a9a8;
+}
+#aside-sx {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
 }
-#aside-sx{
-  flex-direction: row !important;
-  justify-content: space-around;
-  height: auto;
-  width: 100%;
-  top: auto;
-  bottom: -35px;
-  background-color: #131313de;
-}
+@media screen and (max-width: 767px) {
+  #main {
+    margin-left: 0 !important;
+    padding-bottom: 50px !important;
+  }
+  nav {
+    left: 0;
+  }
+  #aside-sx {
+    flex-direction: row !important;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    top: auto;
+    bottom: -35px;
+    background-color: #131313de;
+  }
 }
