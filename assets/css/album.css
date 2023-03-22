@@ -11,9 +11,6 @@ main {
 
 #albumContent {
   background: rgba(18, 18, 18, 0.26213813161983546);
-  top: -15em;
-  right: 0;
-  left: 0;
 }
 
 #cover {
@@ -116,4 +113,29 @@ nav {
   #titolo-card {
     font-size: 3.2rem !important;
   }
+}
+
+#aside-sx button,
+#aside-sx i,
+#aside-sx a,
+#aside-sx span,
+#card-principale #dots {
+  color: rgba(255, 255, 255, 0.733) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+#aside-sx button:hover,
+#aside-sx a:hover,
+#aside-sx i:hover,
+#aside-sx span:hover,
+#card-principale #dots:hover {
+  color: white !important;
+}
+
+#artista:hover {
+  text-decoration: underline !important;
+}
+
+#riga:hover {
+  background-color: #2a2a2a !important;
 }

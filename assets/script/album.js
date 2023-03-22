@@ -28,7 +28,8 @@ const richiesta = url => {
         year,
         album.nb_tracks,
         minuti,
-        secondi
+        secondi,
+        album.artist.id
       );
       for (const canzone of album.tracks.data) {
         const rank = canzone.rank;
@@ -37,13 +38,30 @@ const richiesta = url => {
         const min = Math.floor(durations / 60);
         const sec = durations % 60;
 
-        creaCanzone(canzone.title, canzone.artist.name, riproduzioni, min, sec);
+        creaCanzone(canzone.title, canzone.artist.name, riproduzioni, min, sec, canzone.artist.id);
+      }
+
+      const righe = document.querySelectorAll("#riga");
+      for (const riga of righe) {
+        riga.addEventListener("mouseenter", event => {
+          const icone = riga.querySelectorAll(".icone");
+          icone.forEach(icona => {
+            icona.style.opacity = "1";
+          });
+        });
+
+        riga.addEventListener("mouseleave", event => {
+          const icone = riga.querySelectorAll(".icone");
+          icone.forEach(icona => {
+            icona.style.opacity = "0";
+          });
+        });
       }
     })
     .catch(error => console.log(error));
 };
 
-const createCardPrincipale = (imgCard, imgArtist, album, artist, anno, brani, min, sec) => {
+const createCardPrincipale = (imgCard, imgArtist, album, artist, anno, brani, min, sec, idArtist) => {
   const card = document.querySelector("#albumInfo");
   card.innerHTML = `<div class="row">
     <div class="col-12 col-lg-6 align-self-center pb-3 pb-lg-0">
@@ -65,7 +83,7 @@ const createCardPrincipale = (imgCard, imgArtist, album, artist, anno, brani, mi
           alt="${artist}"
           width="24px"
         />
-        <small class="fw-bold">${artist} &bull; ${anno} &bull; ${brani} brani,</small>
+        <small class="fw-bold"><a class='text-decoration-none text-light' href='artist.html?id=${idArtist}' id='artista'>${artist}</a> &bull; ${anno} &bull; ${brani} brani,</small>
         <small>${min} min ${sec} sec.</small>
       </div>
     </div>
@@ -73,19 +91,32 @@ const createCardPrincipale = (imgCard, imgArtist, album, artist, anno, brani, mi
 };
 
 let i = 1;
-const creaCanzone = (title, artist, riproduzioni, min, sec) => {
+const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist) => {
   const row = document.querySelector("#row-canzoni");
-  const html = `<div class="row mb-2 justify-content-between justify-content-lg-start">
+  const html = `<div id='riga' class="row mb-2 justify-content-between gap-3 justify-content-lg-start align-items-center p-1 rounded-2">
                     <div class="col-1 songNumber d-none d-lg-block">${i}</div>
                     <div class="col-4">
                       <h3 class="fs-6 fw-bold mb-0">${title}</h3>
-                      <small class="light-gray">${artist}</small>
+                      <small class="light-gray"><a class='text-decoration-none text-light' href='artist.html?id=${idArtist}' id='artista'>${artist}</a></small>
                     </div>
+
                     <div class="col-3 text-end light-gray d-none d-lg-block">${riproduzioni}</div>
-                    <div class="col-3 text-end light-gray d-none d-lg-block">${min}:${sec}</div>
+                    <div class="col-3 text-end light-gray d-none d-lg-block">
+                    <span style='opacity: 0' class="icone me-3"><i class="bi bi-heart"></i></span>
+                    ${min}:${sec}
+                    <span style='opacity: 0' class="icone ms-3"><i class="bi bi-three-dots"></i></span>
+                    </div>
                     <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
                   </div>`;
 
   row.innerHTML += html;
   i++;
+  const riga = document.querySelector(".songNumber");
+  riga.addEventListener("mouseenter", event => {
+    riga.innerHTML = '<i class="bi bi-play-fill"></i>';
+  });
+
+  riga.addEventListener("mouseleave", event => {
+    riga.innerHTML = `${i}`;
+  });
 };
