@@ -37,7 +37,7 @@ const richiesta2 = url => {
         const min = Math.floor(durations / 60);
         const sec = durations % 60;
 
-        creaCanzone(canzone.title, canzone.album.cover_small, riproduzioni, min, sec);
+        creaCanzone(canzone.title_short, canzone.album.cover_small, riproduzioni, min, sec);
       }
     })
     .catch(error => console.log(error));
