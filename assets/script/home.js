@@ -34,7 +34,13 @@ const richiesta = url => {
       for (let i = 6; i < 10; i++) {
         const canzone = canzoni[i];
         createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id);
-        createCard2(canzone.album.title, canzone.album.cover_medium, canzone.artist.name, canzone.album.id);
+        createCard2(
+          canzone.album.title,
+          canzone.album.cover_medium,
+          canzone.artist.name,
+          canzone.album.id,
+          canzone.artist.id
+        );
       }
     })
     .catch(error => console.log(error));
@@ -85,7 +91,7 @@ const createCard = (title, img, artist, id) => {
   </div>`;
 };
 
-const createCard2 = (album, img, artist, id) => {
+const createCard2 = (album, img, artist, idAlbum, idArtist) => {
   const row2 = document.querySelector(`#recenti`);
   const col2 = document.createElement("div");
   col2.setAttribute("class", "col");
@@ -97,8 +103,8 @@ const createCard2 = (album, img, artist, id) => {
           <img src="${img}" class="card-img img-fluid" alt="${album}" />
         </div>
         <div class="card-body px-4">
-          <h5 class="card-title fs-5 text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${id}>${album}</a></h5>
-          <p class="card-text"><a class="text-decoration-none text-secondary" href=artist.html?id=${id}>${artist}</a></p>
+          <h5 class="card-title fs-5 text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${idAlbum}>${album}</a></h5>
+          <p class="card-text"><a class="text-decoration-none text-secondary" href=artist.html?id=${idArtist}>${artist}</a></p>
         </div>
       </div>
     </div>`;
