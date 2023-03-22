@@ -24,6 +24,12 @@ main {
 #playBtn {
   border: 0;
   background-color: #1ed760;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+
+#playBtn:hover {
+  transform: scale(1.05);
 }
 
 #favBtn,
@@ -31,7 +37,14 @@ main {
 #downloadBtn {
   border: 0;
   background-color: transparent;
-  fill: #cac7bc;
+  fill: rgba(255, 255, 255, 0.733);
+  transition: fill 0.2s ease-in-out;
+}
+
+#favBtn:hover,
+#moreBtn:hover,
+#downloadBtn:hover {
+  fill: white;
 }
 
 #clockIcon {
@@ -138,4 +151,8 @@ nav {
 
 #riga:hover {
   background-color: #2a2a2a !important;
+}
+
+#riga:hover > #playIcon {
+  display: block !important;
 }
