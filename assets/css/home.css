@@ -277,3 +277,14 @@ input[type="range"].progress:focus::-ms-fill-upper {
     margin: 0;
   }
 }
+
+#playlists div span::hover {
+  cursor: pointer !important;
+}
+
+/* Icona Liked Songs */
+.likedBg {
+  background: linear-gradient(135deg, #450af5, #c4efd9);
+  border-radius: 2px;
+  position: absolute;
+}
