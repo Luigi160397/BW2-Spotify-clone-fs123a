@@ -38,7 +38,16 @@ const richiesta = url => {
         const min = Math.floor(durations / 60);
         const sec = durations % 60;
 
-        creaCanzone(canzone.title, canzone.artist.name, riproduzioni, min, sec, canzone.artist.id);
+        creaCanzone(
+          canzone.title,
+          canzone.artist.name,
+          riproduzioni,
+          min,
+          sec,
+          canzone.artist.id,
+          canzone.album.id,
+          canzone.id
+        );
       }
 
       const righe = document.querySelectorAll("#riga");
@@ -91,13 +100,17 @@ const createCardPrincipale = (imgCard, imgArtist, album, artist, anno, brani, mi
 };
 
 let i = 1;
-const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist) => {
+const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist, idAlbum, idTrack) => {
   const row = document.querySelector("#row-canzoni");
   const html = `<div id='riga' class="row mb-2 justify-content-between gap-3 justify-content-lg-start align-items-center p-1 rounded-2 position-relative">
   <i id='playIcon' style='left:-5px' class="bi bi-play-fill position-absolute d-none fs-1"></i>
                     <div class="col-1 songNumber d-none d-lg-block">${i}</div>
                     <div class="col-4">
-                      <h3 class="fs-6 fw-bold mb-0">${title}</h3>
+                     
+                      <a class="fs-6 fw-bold mb-0 d-block text-decoration-none position-relative text-light" href="album.html?id=${idAlbum}&idTrack=${idTrack}">
+                        ${title}
+                      </a>
+              
                       <small class="light-gray"><a class='text-decoration-none text-light' href='artist.html?id=${idArtist}' id='artista'>${artist}</a></small>
                     </div>
 

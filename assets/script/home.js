@@ -58,7 +58,7 @@ const createCardPlaylist = (title, img, idTrack) => {
   col1.setAttribute("class", "col");
   row1.appendChild(col1);
 
-  col1.innerHTML = `<a href='index.html?id=${idTrack}' id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2 text-decoration-none">
+  col1.innerHTML = `<a href='index.html?idTrack=${idTrack}' id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2 text-decoration-none">
     <div class="row g-0"   style="flex-wrap: nowrap;">
       <div class="col-4 col-md-4">
         <img
@@ -112,7 +112,7 @@ const createCard = (title, img, artist, idArtist, idTrack) => {
   </div>`;
 
   col2.addEventListener("click", () => {
-    window.location.assign(`index.html?id=${idTrack}`);
+    window.location.assign(`index.html?idTrack=${idTrack}`);
   });
 };
 
