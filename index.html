@@ -425,16 +425,17 @@
                 <button type="button" class="btn btn-secondary"><i class="bi bi-repeat"></i></button>
               </div>
               <div>
-                <input
-                  type="range"
-                  class="form-range"
-                  min="0"
-                  max="100"
-                  step="1"
-                  value="50"
-                  id="progressbar"
-                  aria-label="Range"
-                />
+                <div
+                  class="progress"
+                  role="progressbar"
+                  aria-label="Example 1px high"
+                  aria-valuenow="25"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="height: 3px"
+                >
+                  <div class="progress-bar bg-success" style="width: 40%"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -443,7 +444,7 @@
               <button type="button" class="btn btn-secondary"><i class="bi bi-volume-down"></i></button>
               <input
                 type="range"
-                class="form-range"
+                class="progress"
                 min="0"
                 max="100"
                 step="1"
