@@ -49,19 +49,19 @@ const richiesta = url => {
           canzone.artist.id
         );
       }
-      const queryParams = new URLSearchParams(window.location.search);
-      const id = queryParams.get("idTrack");
+      // const queryParams = new URLSearchParams(window.location.search);
+      // const id = queryParams.get("idTrack");
 
-      if (id) {
-        const trackTrovata = canzoni.find(canzone => canzone.id === Number(id));
-        console.log(trackTrovata);
-        creaCardPlayer(
-          trackTrovata.album.cover_small,
-          trackTrovata.title,
-          trackTrovata.artist.name,
-          trackTrovata.artist.id
-        );
-      }
+      // if (id) {
+      //   const trackTrovata = canzoni.find(canzone => canzone.id === Number(id));
+      //   console.log(trackTrovata);
+      //   creaCardPlayer(
+      //     trackTrovata.album.cover_small,
+      //     trackTrovata.title,
+      //     trackTrovata.artist.name,
+      //     trackTrovata.artist.id
+      //   );
+      // }
     })
     .catch(error => console.log(error));
 };
@@ -126,7 +126,7 @@ const createCard = (title, img, artist, idArtist, idTrack) => {
   </div>`;
 
   col2.addEventListener("click", () => {
-    window.location.assign(`index.html?idTrack=${idTrack}`);
+    creaCardPlayer(img, title, artist, idArtist);
   });
 };
 
