@@ -38,7 +38,15 @@ const richiesta2 = url => {
         const min = Math.floor(durations / 60);
         const sec = durations % 60;
 
-        creaCanzone(canzone.title_short, canzone.album.cover_small, riproduzioni, min, sec);
+        creaCanzone(
+          canzone.title_short,
+          canzone.album.cover_small,
+          riproduzioni,
+          min,
+          sec,
+          canzone.artist.id,
+          canzone.id
+        );
         const righe = document.querySelectorAll("#riga");
         for (const riga of righe) {
           riga.addEventListener("mouseenter", event => {
@@ -89,7 +97,7 @@ const createCardPrincipale = (artist, img, ascoltatori) => {
 };
 
 let i = 1;
-const creaCanzone = (title, img, riproduzioni, min, sec) => {
+const creaCanzone = (title, img, riproduzioni, min, sec, idArtist, idTrack) => {
   const row = document.querySelector("#tracks");
   const html = `<div id='riga' class="row mb-3 justify-content-between align-items-center justify-content-lg-start p-1 rounded-2 position-relative">
   <i id='playIcon' style='left:10px' class="bi bi-play-fill position-absolute d-none fs-1"></i>
@@ -97,7 +105,11 @@ const creaCanzone = (title, img, riproduzioni, min, sec) => {
   <div class="col-7 col-xl-4 d-flex gap-2 align-items-center">
     <img src="${img}" alt="${title}" />
     <span>
-      <h3 class="fs-6 fw-bold mb-0">${title}</h3>
+
+       <a class="fs-6 fw-bold mb-0 d-block text-decoration-none position-relative text-light" href="artist.html?id=${idArtist}&idTrack=${idTrack}">
+          ${title}
+        </a>
+      
       <small class="d-block d-xl-none light-gray">${riproduzioni}</small>
     </span>
   </div>
