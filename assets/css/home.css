@@ -288,3 +288,9 @@ input[type="range"].progress:focus::-ms-fill-upper {
   border-radius: 2px;
   position: absolute;
 }
+
+.episodeBg {
+  background-color: #004537;
+  border-radius: 2px;
+  position: absolute;
+}
