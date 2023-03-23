@@ -131,18 +131,21 @@ nav {
 
 #card-principale h1:hover,
 #artista:hover,
-#artistaPlayer a:hover {
+#artistaPlayer a:hover,
+#titoloPlayer a:hover {
   text-decoration: underline !important;
 }
 
 #play,
-#playBtn {
+#playBtn,
+.playerPlay {
   transform: scale(1);
   transition: transform 0.1s ease-in-out;
 }
 
 #play:hover,
-#playBtn:hover {
+#playBtn:hover,
+.playerPlay:hover {
   transform: scale(1.05);
 }
 
@@ -217,4 +220,13 @@ nav {
     background: #ffffff;
     box-shadow: -80px 0 0 80px #1db954;
   }
+}
+
+.iconePlayer {
+  color: rgba(255, 255, 255, 0.733) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.iconePlayer:hover {
+  color: white !important;
 }
