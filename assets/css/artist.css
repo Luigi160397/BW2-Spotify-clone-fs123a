@@ -42,10 +42,10 @@ nav {
 
 #artistBanner {
   background-image: url("https://media.timeout.com/images/103733283/750/422/image.jpg");
-  background-position-y: -70px;
+  background-position-y: -300px;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 12rem;
+  padding-top: 20rem;
 }
 
 #verifiedIcon {
