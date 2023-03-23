@@ -347,6 +347,111 @@
           </div>
         </div>
       </aside>
+      <div
+        id="player"
+        style="bottom: 0; left: 0; right: 0; z-index: 99999"
+        class="container-fluid position-fixed bg-dark py-3 px-4"
+      >
+        <div class="row align-items-center justify-content-center justify-content-md-between">
+          <div class="col-2 d-none d-md-block">
+            <div class="card bg-dark border-0">
+              <div class="row g-0">
+                <div class="col-4 col-md-4">
+                  <img
+                    src="assets/imgs/main/image-2.jpg"
+                    style="min-height: 60px; min-width: 60px"
+                    class="img-fluid rounded-0"
+                    alt="pic"
+                  />
+                </div>
+                <div class="col-8 col-md-8">
+                  <div class="card-body">
+                    <h6 id="titoloPlayer" class="card-title text-light text-truncate">
+                      <a class="text-decoration-none text-light" href="#"
+                        >TitoloTitoloTitoloTitoloTitoloTitoloTitoloTitoloTitoloTitolo</a
+                      >
+                    </h6>
+                    <p id="artistaPlayer" class="card-text">
+                      <a class="text-decoration-none text-light text-nowrap" href="#">artista</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5">
+            <div class="container-fluid d-flex flex-md-column">
+              <div class="align-self-center mb-4">
+                <button type="button" class="btn border-0 rounded-circle d-none d-md-inline-block">
+                  <i class="bi bi-shuffle text-light fs-4 iconePlayer"></i>
+                </button>
+                <button type="button" class="btn border-0 rounded-circle d-none d-md-inline-block">
+                  <i class="bi bi-skip-start-fill text-light fs-4 iconePlayer"></i>
+                </button>
+                <div class="d-md-inline-block text-nowrap">
+                  <span class="text-truncate">
+                    <a style="vertical-align: middle" class="text-decoration-none text-light d-md-none fs-4" href="#"
+                      >Lorem ipsum dolor sit amet consectetur
+                    </a>
+                  </span>
+
+                  <button class="btn playerPlay d-md-none">
+                    <svg
+                      role="presentation"
+                      height="32"
+                      width="32"
+                      aria-hidden="true"
+                      class="Svg-sc-ytk21e-0 gQUQL"
+                      viewBox="0 0 16 16"
+                      data-encore-id="icon"
+                      fill="white"
+                    >
+                      <path
+                        d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"
+                      ></path>
+                      <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                    </svg>
+                  </button>
+                  <button class="btn playerPlay d-md-none">
+                    <i class="bi bi-heart text-light fs-4 iconaCuore"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-secondary bg-white rounded-circle playerPlay">
+                    <i class="bi bi-play-fill text-dark fs-4 iconaPlay"></i>
+                  </button>
+                </div>
+                <button type="button" class="btn border-0 rounded-circle d-none d-md-inline-block">
+                  <i class="bi bi-skip-end-fill text-light fs-4 iconePlayer"></i>
+                </button>
+                <button type="button" class="btn border-0 rounded-circle d-none d-md-inline-block">
+                  <i class="bi bi-repeat text-light fs-4 iconePlayer"></i>
+                </button>
+              </div>
+              <div>
+                <div
+                  class="progress"
+                  role="progressbar"
+                  aria-label="Example 1px high"
+                  aria-valuenow="25"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="height: 3px"
+                >
+                  <div class="progress-bar" style="width: 40%; background-color: #1db954 !important"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 d-none d-md-block">
+            <div class="container-fluid d-flex align-items-center">
+              <button type="button" class="btn border-0 rounded-circle">
+                <i class="bi bi-volume-down text-light fs-2 iconePlayer"></i>
+              </button>
+              <input type="range" class="form-range" id="customRange1" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

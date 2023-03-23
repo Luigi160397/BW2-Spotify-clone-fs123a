@@ -1,6 +1,7 @@
 #main {
   margin-left: 300px !important;
   margin-right: 240px !important;
+  margin-bottom: 100px !important;
 }
 nav {
   top: 0;
@@ -25,7 +26,13 @@ nav {
   transition: transform 0.1s ease-in-out;
 }
 
-#playBtn:hover {
+.playerPlay {
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+
+#playBtn:hover,
+.playerPlay:hover {
   transform: scale(1.05);
 }
 
@@ -104,6 +111,16 @@ nav {
     bottom: -35px;
     background-color: #131313de !important;
   }
+  #player {
+    bottom: 85px !important;
+    right: -10px !important;
+    left: -10px !important;
+    width: 100% !important;
+    height: 100px;
+    padding-bottom: 6.5rem;
+    background-color: #131313de !important;
+    border-radius: 20px !important;
+  }
 }
 
 #aside-sx button,
@@ -154,4 +171,70 @@ nav {
 
 #playlists div span:hover {
   cursor: pointer !important;
+}
+
+#artistaPlayer a:hover,
+#titoloPlayer a:hover {
+  text-decoration: underline !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="range"],
+  input[type="range"]:active {
+    height: 3px;
+    overflow: hidden;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ababab;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track,
+  input[type="range"]::-webkit-slider-runnable-track:active {
+    height: 3px;
+    -webkit-appearance: none;
+    color: #1db954;
+    margin-top: -1px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb,
+  input[type="range"]::-webkit-slider-thumb:active {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: pointer;
+    background: #ffffff;
+    box-shadow: -80px 0 0 80px #1db954;
+  }
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: #1db954;
+}
+input[type="range"]::-moz-range-track {
+  background-color: #ababab;
+}
+
+.iconePlayer {
+  color: rgba(255, 255, 255, 0.733) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.iconePlayer:hover {
+  color: white !important;
+}
+
+@media screen and (max-width: 767px) {
+  .playerPlay {
+    background-color: transparent !important;
+    border: 0;
+  }
+  .iconaPlay {
+    color: white !important;
+    font-size: 3rem !important;
+  }
+
+  .iconaCuore {
+    color: white !important;
+    font-size: 2rem !important;
+  }
 }
