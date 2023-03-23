@@ -419,6 +419,7 @@
         </div>
       </aside>
       <div
+        id="player"
         style="bottom: 0; left: 0; right: 0; z-index: 99999"
         class="container-fluid position-fixed bg-dark py-3 px-4"
       >
@@ -431,8 +432,12 @@
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h6 class="card-title text-light">Titolo</h6>
-                    <p class="card-text"><a class="text-decoration-none text-light" href="#">artista</a></p>
+                    <h6 id="titoloPlayer" class="card-title text-light">
+                      <a class="text-decoration-none text-light" href="#">Titolo</a>
+                    </h6>
+                    <p id="artistaPlayer" class="card-text">
+                      <a class="text-decoration-none text-light" href="#">artista</a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -442,19 +447,19 @@
             <div class="container-fluid d-flex flex-column">
               <div class="align-self-center mb-4">
                 <button type="button" class="btn border-0 rounded-circle">
-                  <i class="bi bi-shuffle text-light fs-4"></i>
+                  <i class="bi bi-shuffle text-light fs-4 iconePlayer"></i>
                 </button>
                 <button type="button" class="btn border-0 rounded-circle">
-                  <i class="bi bi-skip-start-fill text-light fs-4"></i>
+                  <i class="bi bi-skip-start-fill text-light fs-4 iconePlayer"></i>
                 </button>
-                <button type="button" class="btn btn-secondary bg-light rounded-circle">
+                <button type="button" class="btn btn-secondary bg-white rounded-circle playerPlay">
                   <i class="bi bi-play-fill text-dark fs-4"></i>
                 </button>
                 <button type="button" class="btn border-0 rounded-circle">
-                  <i class="bi bi-skip-end-fill text-light fs-4"></i>
+                  <i class="bi bi-skip-end-fill text-light fs-4 iconePlayer"></i>
                 </button>
                 <button type="button" class="btn border-0 rounded-circle">
-                  <i class="bi bi-repeat text-light fs-4"></i>
+                  <i class="bi bi-repeat text-light fs-4 iconePlayer"></i>
                 </button>
               </div>
               <div>
@@ -467,7 +472,7 @@
                   aria-valuemax="100"
                   style="height: 3px"
                 >
-                  <div class="progress-bar bg-success" style="width: 40%"></div>
+                  <div class="progress-bar" style="width: 40%; background-color: #1db954 !important"></div>
                 </div>
               </div>
             </div>
@@ -475,18 +480,9 @@
           <div class="col-2">
             <div class="container-fluid d-flex align-items-center">
               <button type="button" class="btn border-0 rounded-circle">
-                <i class="bi bi-volume-down text-light fs-2"></i>
+                <i class="bi bi-volume-down text-light fs-2 iconePlayer"></i>
               </button>
-              <input
-                type="range"
-                class="progress"
-                min="0"
-                max="100"
-                step="1"
-                value="50"
-                id="progressbar"
-                aria-label="Range"
-              />
+              <input type="range" class="form-range" id="customRange1" />
             </div>
           </div>
         </div>
