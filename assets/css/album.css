@@ -134,15 +134,23 @@ nav {
 #aside-sx span,
 #card-principale #dots {
   color: rgba(255, 255, 255, 0.733) !important;
+
   transition: color 0.2s ease-in-out;
+}
+
+#aside-sx svg {
+  fill: rgba(255, 255, 255, 0.733) !important;
+  transition: fill 0.2s ease-in-out;
 }
 
 #aside-sx button:hover,
 #aside-sx a:hover,
 #aside-sx i:hover,
 #aside-sx span:hover,
-#card-principale #dots:hover {
+#card-principale #dots:hover,
+#aside-sx svg:hover {
   color: white !important;
+  fill: white !important;
 }
 
 #artista:hover {
@@ -155,4 +163,21 @@ nav {
 
 #riga:hover > #playIcon {
   display: block !important;
+}
+
+/* Icona Liked Songs */
+.likedBg {
+  background: linear-gradient(135deg, #450af5, #c4efd9);
+  border-radius: 2px;
+  position: absolute;
+}
+
+.episodeBg {
+  background-color: #004537;
+  border-radius: 2px;
+  position: absolute;
+}
+
+#playlists div span:hover {
+  cursor: pointer !important;
 }
