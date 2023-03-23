@@ -418,7 +418,10 @@
           </div>
         </div>
       </aside>
-      <div style="bottom: 0; left: 0; right: 0; z-index: 999" class="container-fluid position-fixed bg-dark py-3 px-4">
+      <div
+        style="bottom: 0; left: 0; right: 0; z-index: 99999"
+        class="container-fluid position-fixed bg-dark py-3 px-4"
+      >
         <div class="row align-items-center justify-content-between">
           <div class="col-2">
             <div class="card bg-dark border-0">
@@ -438,11 +441,21 @@
           <div class="col-5">
             <div class="container-fluid d-flex flex-column">
               <div class="align-self-center mb-4">
-                <button type="button" class="btn btn-secondary"><i class="bi bi-shuffle"></i></button>
-                <button type="button" class="btn btn-secondary"><i class="bi bi-skip-start-fill"></i></button>
-                <button type="button" class="btn btn-secondary"><i class="bi bi-play-fill"></i></button>
-                <button type="button" class="btn btn-secondary"><i class="bi bi-skip-end-fill"></i></button>
-                <button type="button" class="btn btn-secondary"><i class="bi bi-repeat"></i></button>
+                <button type="button" class="btn border-0 rounded-circle">
+                  <i class="bi bi-shuffle text-light fs-4"></i>
+                </button>
+                <button type="button" class="btn border-0 rounded-circle">
+                  <i class="bi bi-skip-start-fill text-light fs-4"></i>
+                </button>
+                <button type="button" class="btn btn-secondary bg-light rounded-circle">
+                  <i class="bi bi-play-fill text-dark fs-4"></i>
+                </button>
+                <button type="button" class="btn border-0 rounded-circle">
+                  <i class="bi bi-skip-end-fill text-light fs-4"></i>
+                </button>
+                <button type="button" class="btn border-0 rounded-circle">
+                  <i class="bi bi-repeat text-light fs-4"></i>
+                </button>
               </div>
               <div>
                 <div
@@ -460,8 +473,10 @@
             </div>
           </div>
           <div class="col-2">
-            <div class="container-fluid d-flex align-items-center gap-2">
-              <button type="button" class="btn btn-secondary"><i class="bi bi-volume-down"></i></button>
+            <div class="container-fluid d-flex align-items-center">
+              <button type="button" class="btn border-0 rounded-circle">
+                <i class="bi bi-volume-down text-light fs-2"></i>
+              </button>
               <input
                 type="range"
                 class="progress"
