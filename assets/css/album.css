@@ -176,6 +176,10 @@ nav {
   text-decoration: underline !important;
 }
 
+#riga {
+  cursor: pointer;
+}
+
 #riga:hover {
   background-color: #2a2a2a !important;
 }
