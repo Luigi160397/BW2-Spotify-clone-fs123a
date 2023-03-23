@@ -45,7 +45,7 @@ const richiesta2 = url => {
           min,
           sec,
           canzone.artist.id,
-          canzone.id
+          canzone.artist.name
         );
         const righe = document.querySelectorAll("#riga");
         for (const riga of righe) {
@@ -97,16 +97,20 @@ const createCardPrincipale = (artist, img, ascoltatori) => {
 };
 
 let i = 1;
-const creaCanzone = (title, img, riproduzioni, min, sec, idArtist, idTrack) => {
+const creaCanzone = (title, img, riproduzioni, min, sec, idArtist, artist) => {
   const row = document.querySelector("#tracks");
-  const html = `<div id='riga' class="row mb-3 justify-content-between align-items-center justify-content-lg-start p-1 rounded-2 position-relative">
-  <i id='playIcon' style='left:10px' class="bi bi-play-fill position-absolute d-none fs-1"></i>
+  const div = document.createElement("div");
+  div.id = "riga";
+  div.className =
+    "row mb-3 justify-content-between align-items-center justify-content-lg-start p-1 rounded-2 position-relative";
+
+  div.innerHTML = `<i id='playIcon' style='left:10px' class="bi bi-play-fill position-absolute d-none fs-1"></i>
   <div class="col-1 text-end light-gray">${i}</div>
   <div class="col-7 col-xl-4 d-flex gap-2 align-items-center">
     <img src="${img}" alt="${title}" />
     <span>
 
-       <a class="fs-6 fw-bold mb-0 d-block text-decoration-none position-relative text-light" href="artist.html?id=${idArtist}&idTrack=${idTrack}">
+       <a class="fs-6 fw-bold mb-0 d-block text-decoration-none position-relative text-light">
           ${title}
         </a>
       
@@ -123,11 +127,14 @@ const creaCanzone = (title, img, riproduzioni, min, sec, idArtist, idTrack) => {
   </div>
   <div class="col-3 text-end light-gray d-block d-lg-none">
     <i class="bi bi-three-dots-vertical"></i>
-  </div>
-</div>`;
+  </div>`;
 
-  row.innerHTML += html;
+  row.appendChild(div);
   i++;
+
+  div.onclick = function () {
+    creaCardPlayer(img, title, artist, idArtist);
+  };
 };
 
 const creaLike = (img, artist) => {
@@ -155,4 +162,34 @@ const creaLike = (img, artist) => {
 
 const apriCerca = () => {
   window.location.href = "index.html?form=1";
+};
+
+const creaCardPlayer = (img, title, artist, idArtist) => {
+  const col = document.querySelector("#cardPlayer");
+
+  col.style.opacity = "1";
+  col.innerHTML = `<div class="card bg-dark border-0">
+  <div class="row g-0">
+    <div class="col-4 col-md-4">
+      <img
+        src="${img}"
+        style="min-height: 60px; min-width: 60px"
+        class="img-fluid rounded-0"
+        alt="${title}"
+      />
+    </div>
+    <div class="col-8 col-md-8">
+      <div class="card-body">
+        <h6 id="titoloPlayer" class="card-title text-light text-truncate">
+          <a class="text-decoration-none text-light" href="#"
+            >${title}</a
+          >
+        </h6>
+        <p id="artistaPlayer" class="card-text">
+          <a class="text-decoration-none text-light text-nowrap" href="artist.html?id=${idArtist}">${artist}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>`;
 };
