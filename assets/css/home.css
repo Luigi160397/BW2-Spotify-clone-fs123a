@@ -91,7 +91,7 @@ nav {
   padding-top: 5px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
   #mainWrapper {
     margin-left: 0 !important;
     padding-bottom: 60px !important;
@@ -109,6 +109,16 @@ nav {
     top: auto;
     bottom: -35px;
     background-color: #131313de;
+  }
+  #player {
+    bottom: 85px !important;
+    right: -10px !important;
+    left: -10px !important;
+    width: 100% !important;
+    height: 100px;
+    padding-bottom: 6.5rem;
+    background-color: #131313de !important;
+    border-radius: 20px !important;
   }
 }
 
