@@ -188,12 +188,14 @@ nav {
   transform: scale(1.05);
 }
 
-#canzoni {
+#canzoni,
+#cardCanzoni {
   background-color: #161616 !important;
   transition: background-color 0.3s ease-in-out;
 }
 
-#canzoni:hover {
+#canzoni:hover,
+#cardCanzoni:hover {
   background-color: #363636 !important;
 }
 

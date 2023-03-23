@@ -35,11 +35,11 @@ const richiesta = url => {
       );
       for (let i = 0; i < 6; i++) {
         const canzone = canzoni[i];
-        createCardPlaylist(canzone.title, canzone.artist.picture_medium);
+        createCardPlaylist(canzone.title, canzone.artist.picture_medium, canzone.id);
       }
       for (let i = 6; i < 10; i++) {
         const canzone = canzoni[i];
-        createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id);
+        createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id, canzone.id);
         createCard2(
           canzone.album.title,
           canzone.album.cover_medium,
@@ -52,13 +52,13 @@ const richiesta = url => {
     .catch(error => console.log(error));
 };
 
-const createCardPlaylist = (title, img) => {
+const createCardPlaylist = (title, img, idTrack) => {
   const row1 = document.querySelector("#card-playlist");
   const col1 = document.createElement("div");
   col1.setAttribute("class", "col");
   row1.appendChild(col1);
 
-  col1.innerHTML = `<div id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2">
+  col1.innerHTML = `<a href='index.html?id=${idTrack}' id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2 text-decoration-none">
     <div class="row g-0"   style="flex-wrap: nowrap;">
       <div class="col-4 col-md-4">
         <img
@@ -75,10 +75,10 @@ const createCardPlaylist = (title, img) => {
         </div>
       </div>
     </div>
-  </div>`;
+  </a>`;
 };
 
-const createCard = (title, img, artist, id) => {
+const createCard = (title, img, artist, idArtist, idTrack) => {
   const row2 = document.querySelector(`#cards2`);
   const col2 = document.createElement("div");
   col2.setAttribute("class", "col");
@@ -106,10 +106,14 @@ const createCard = (title, img, artist, id) => {
       </div>
       <div class="card-body px-4">
         <h5 class="card-title fs-5 text-truncate">${title}</h5>
-        <p class="card-text"><a id='artista' class="text-decoration-none text-secondary" href=artist.html?id=${id}>${artist}</a></p>
+        <p class="card-text"><a id='artista' class="text-decoration-none text-secondary" href=artist.html?id=${idArtist}>${artist}</a></p>
       </div>
     </div>
   </div>`;
+
+  col2.addEventListener("click", () => {
+    window.location.assign(`index.html?id=${idTrack}`);
+  });
 };
 
 const createCard2 = (album, img, artist, idAlbum, idArtist) => {
@@ -144,6 +148,10 @@ const createCard2 = (album, img, artist, idAlbum, idArtist) => {
         </div>
       </div>
     </div>`;
+
+  col2.addEventListener("click", () => {
+    window.location.assign(`album.html?id=${idAlbum}`);
+  });
 };
 
 const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum) => {
