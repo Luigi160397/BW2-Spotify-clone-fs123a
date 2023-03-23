@@ -31,12 +31,11 @@ const richiesta = url => {
         canzoni[0].artist.name,
         canzoni[0].artist.id,
         canzoni[0].album.title,
-        canzoni[0].album.id,
-        canzoni[0].id
+        canzoni[0].album.id
       );
       for (let i = 0; i < 6; i++) {
         const canzone = canzoni[i];
-        createCardPlaylist(canzone.title, canzone.artist.picture_medium, canzone.id);
+        createCardPlaylist(canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id);
       }
       for (let i = 6; i < 10; i++) {
         const canzone = canzoni[i];
@@ -49,30 +48,17 @@ const richiesta = url => {
           canzone.artist.id
         );
       }
-      // const queryParams = new URLSearchParams(window.location.search);
-      // const id = queryParams.get("idTrack");
-
-      // if (id) {
-      //   const trackTrovata = canzoni.find(canzone => canzone.id === Number(id));
-      //   console.log(trackTrovata);
-      //   creaCardPlayer(
-      //     trackTrovata.album.cover_small,
-      //     trackTrovata.title,
-      //     trackTrovata.artist.name,
-      //     trackTrovata.artist.id
-      //   );
-      // }
     })
     .catch(error => console.log(error));
 };
 
-const createCardPlaylist = (title, img, idTrack) => {
+const createCardPlaylist = (title, img, artist, idArtist) => {
   const row1 = document.querySelector("#card-playlist");
   const col1 = document.createElement("div");
   col1.setAttribute("class", "col");
   row1.appendChild(col1);
 
-  col1.innerHTML = `<a href='index.html?idTrack=${idTrack}' id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2 text-decoration-none">
+  col1.innerHTML = `<div id="cardsPlaylist" class="card mb-3 border-0 text-light rounded-2 text-decoration-none">
     <div class="row g-0"   style="flex-wrap: nowrap;">
       <div class="col-4 col-md-4">
         <img
@@ -89,10 +75,14 @@ const createCardPlaylist = (title, img, idTrack) => {
         </div>
       </div>
     </div>
-  </a>`;
+  </div>`;
+
+  col1.addEventListener("click", () => {
+    creaCardPlayer(img, title, artist, idArtist);
+  });
 };
 
-const createCard = (title, img, artist, idArtist, idTrack) => {
+const createCard = (title, img, artist, idArtist) => {
   const row2 = document.querySelector(`#cards2`);
   const col2 = document.createElement("div");
   col2.setAttribute("class", "col");
@@ -168,7 +158,7 @@ const createCard2 = (album, img, artist, idAlbum, idArtist) => {
   });
 };
 
-const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum, idTrack) => {
+const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum) => {
   const cardPrincipale = document.querySelector("#card-principale");
   cardPrincipale.innerHTML = `<div class="row g-0">
     <div class="col-2">
@@ -177,11 +167,11 @@ const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum, idTr
     <div class="col-6">
       <div class="card-body">
         <h6 class="card-title fw-bold text-truncate"><a class="text-decoration-none text-light" href=album.html?id=${idAlbum}>${album}</a></h6>
-        <h1 class="card-title fw-bold text-truncate"><a class="text-decoration-none text-light" href="index.html?idTrack=${idTrack}">${title}</a></h1>
+        <h1 class="card-title fw-bold text-truncate"><a class="text-decoration-none text-light" >${title}</a></h1>
         <p class="card-text"><a class="text-decoration-none text-light fw-bold" href=artist.html?id=${idArtist}>${artist}</a></p>
         <p class="card-text fw-bold">Ascolta il nuovo singolo di <a class="text-decoration-none text-light" href=artist.html?id=${idArtist}>${artist}</a>!</p>
         <div class="d-flex gap-2">
-          <a id='play' href="index.html?idTrack=${idTrack}" style="background-color: #1ed760" class="border-0 px-4 py-2 rounded-pill fw-bold text-decoration-none text-dark"><span style="vertical-align: -webkit-baseline-middle;">Play</span></a>
+          <button id='play' style="background-color: #1ed760" class="border-0 px-4 py-2 rounded-pill fw-bold text-decoration-none text-dark">Play</button>
           <button
           id='salva'
             style="background-color: #2125297c"
@@ -196,6 +186,10 @@ const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum, idTr
       </div>
     </div>
   </div>`;
+
+  cardPrincipale.addEventListener("click", () => {
+    creaCardPlayer(img, title, artist, idArtist);
+  });
 };
 
 const shuffle = array => {
@@ -227,6 +221,7 @@ form.addEventListener("submit", event => {
 
 const creaCardPlayer = (img, title, artist, idArtist) => {
   const col = document.querySelector("#cardPlayer");
+  col.style.opacity = "1";
   col.innerHTML = `<div class="card bg-dark border-0">
   <div class="row g-0">
     <div class="col-4 col-md-4">
