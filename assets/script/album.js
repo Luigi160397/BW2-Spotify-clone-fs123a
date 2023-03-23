@@ -46,25 +46,24 @@ const richiesta = url => {
           min,
           sec,
           canzone.artist.id,
-          canzone.album.id,
-          canzone.id
+          canzone.album.cover_medium
         );
       }
 
-      const parametri = new URLSearchParams(window.location.search);
-      const idTrack = parametri.get("idTrack");
+      // const parametri = new URLSearchParams(window.location.search);
+      // const idTrack = parametri.get("idTrack");
 
-      if (idTrack) {
-        const trackTrovata = arrayCanzoni.find(canzone => canzone.id === Number(idTrack));
-        console.log(trackTrovata);
-        document.querySelector("#cardPlayer").innerHTML = "";
-        creaCardPlayer(
-          trackTrovata.album.cover_small,
-          trackTrovata.title,
-          trackTrovata.artist.name,
-          trackTrovata.artist.id
-        );
-      }
+      // if (idTrack) {
+      //   const trackTrovata = arrayCanzoni.find(canzone => canzone.id === Number(idTrack));
+      //   console.log(trackTrovata);
+      //   document.querySelector("#cardPlayer").innerHTML = "";
+      //   creaCardPlayer(
+      //     trackTrovata.album.cover_small,
+      //     trackTrovata.title,
+      //     trackTrovata.artist.name,
+      //     trackTrovata.artist.id
+      //   );
+      // }
 
       const righe = document.querySelectorAll("#riga");
       for (const riga of righe) {
@@ -116,31 +115,35 @@ const createCardPrincipale = (imgCard, imgArtist, album, artist, anno, brani, mi
 };
 
 let i = 1;
-const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist, idAlbum, idTrack) => {
+const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist, img) => {
   const row = document.querySelector("#row-canzoni");
-  const html = `<div id='riga' class="row mb-2 justify-content-between gap-3 justify-content-lg-start align-items-center p-1 rounded-2 position-relative">
-  <i id='playIcon' style='left:-5px' class="bi bi-play-fill position-absolute d-none fs-1"></i>
-                    <div class="col-1 songNumber d-none d-lg-block">${i}</div>
-                    <div class="col-4">
-                     
-                      <a class="fs-6 fw-bold mb-0 d-block text-decoration-none position-relative text-light" href="album.html?id=${idAlbum}&idTrack=${idTrack}">
-                        ${title}
-                      </a>
-              
-                      <small class="light-gray"><a class='text-decoration-none text-light' href='artist.html?id=${idArtist}' id='artista'>${artist}</a></small>
-                    </div>
-
-                    <div class="col-3 text-end light-gray d-none d-lg-block">${riproduzioni}</div>
-                    <div class="col-3 text-end light-gray d-none d-lg-block">
-                    <span style='opacity: 0' class="icone me-3"><i class="bi bi-heart"></i></span>
-                    ${min}:${sec}
-                    <span style='opacity: 0' class="icone ms-3"><i class="bi bi-three-dots"></i></span>
-                    </div>
-                    <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
-                  </div>`;
-
-  row.innerHTML += html;
+  const div = document.createElement("div");
+  div.id = "riga";
+  div.className =
+    "row mb-2 justify-content-between gap-3 justify-content-lg-start align-items-center p-1 rounded-2 position-relative";
+  div.innerHTML = `
+    <i id='playIcon' style='left:-5px' class="bi bi-play-fill position-absolute d-none fs-1"></i>
+    <div class="col-1 songNumber d-none d-lg-block">${i}</div>
+    <div class="col-4">
+      <a class="fs-6 fw-bold mb-0 d-block text-decoration-none position-relative text-light">
+        ${title}
+      </a>
+      <small class="light-gray"><a class='text-decoration-none text-light' href='artist.html?id=${idArtist}' id='artista'>${artist}</a></small>
+    </div>
+    <div class="col-3 text-end light-gray d-none d-lg-block">${riproduzioni}</div>
+    <div class="col-3 text-end light-gray d-none d-lg-block">
+      <span style='opacity: 0' class="icone me-3"><i class="bi bi-heart"></i></span>
+      ${min}:${sec}
+      <span style='opacity: 0' class="icone ms-3"><i class="bi bi-three-dots"></i></span>
+    </div>
+    <div class="col-3 text-end light-gray d-block d-lg-none"><i class="bi bi-three-dots-vertical"></i></div>
+  `;
+  row.appendChild(div);
   i++;
+
+  div.onclick = function () {
+    creaCardPlayer(img, title, artist, idArtist);
+  };
 };
 
 const apriCerca = () => {
@@ -149,6 +152,8 @@ const apriCerca = () => {
 
 const creaCardPlayer = (img, title, artist, idArtist) => {
   const col = document.querySelector("#cardPlayer");
+
+  col.style.opacity = "1";
   col.innerHTML = `<div class="card bg-dark border-0">
   <div class="row g-0">
     <div class="col-4 col-md-4">
