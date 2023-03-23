@@ -31,7 +31,8 @@ const richiesta = url => {
         secondi,
         album.artist.id
       );
-      for (const canzone of album.tracks.data) {
+      const arrayCanzoni = album.tracks.data;
+      for (const canzone of arrayCanzoni) {
         const rank = canzone.rank;
         const riproduzioni = rank.toLocaleString(undefined, { minimumFractionDigits: 0 });
         const durations = canzone.duration;
@@ -47,6 +48,21 @@ const richiesta = url => {
           canzone.artist.id,
           canzone.album.id,
           canzone.id
+        );
+      }
+
+      const parametri = new URLSearchParams(window.location.search);
+      const idTrack = parametri.get("idTrack");
+
+      if (idTrack) {
+        const trackTrovata = arrayCanzoni.find(canzone => canzone.id === Number(idTrack));
+        console.log(trackTrovata);
+        document.querySelector("#cardPlayer").innerHTML = "";
+        creaCardPlayer(
+          trackTrovata.album.cover_small,
+          trackTrovata.title,
+          trackTrovata.artist.name,
+          trackTrovata.artist.id
         );
       }
 
@@ -129,4 +145,32 @@ const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist, idAlbum, i
 
 const apriCerca = () => {
   window.location.href = "index.html?form=1";
+};
+
+const creaCardPlayer = (img, title, artist, idArtist) => {
+  const col = document.querySelector("#cardPlayer");
+  col.innerHTML = `<div class="card bg-dark border-0">
+  <div class="row g-0">
+    <div class="col-4 col-md-4">
+      <img
+        src="${img}"
+        style="min-height: 60px; min-width: 60px"
+        class="img-fluid rounded-0"
+        alt="${title}"
+      />
+    </div>
+    <div class="col-8 col-md-8">
+      <div class="card-body">
+        <h6 id="titoloPlayer" class="card-title text-light text-truncate">
+          <a class="text-decoration-none text-light" href="#"
+            >${title}</a
+          >
+        </h6>
+        <p id="artistaPlayer" class="card-text">
+          <a class="text-decoration-none text-light text-nowrap" href="artist.html?id=${idArtist}">${artist}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>`;
 };
