@@ -35,7 +35,13 @@ const richiesta = url => {
       );
       for (let i = 0; i < 6; i++) {
         const canzone = canzoni[i];
-        createCardPlaylist(canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id);
+        createCardPlaylist(
+          canzone.title,
+          canzone.artist.picture_medium,
+          canzone.artist.name,
+          canzone.artist.id,
+          canzone.preview
+        );
       }
       for (let i = 6; i < 10; i++) {
         const canzone = canzoni[i];
@@ -52,7 +58,7 @@ const richiesta = url => {
     .catch(error => console.log(error));
 };
 
-const createCardPlaylist = (title, img, artist, idArtist) => {
+const createCardPlaylist = (title, img, artist, idArtist, preview) => {
   const row1 = document.querySelector("#card-playlist");
   const col1 = document.createElement("div");
   col1.setAttribute("class", "col");
@@ -78,7 +84,7 @@ const createCardPlaylist = (title, img, artist, idArtist) => {
   </div>`;
 
   col1.addEventListener("click", () => {
-    creaCardPlayer(img, title, artist, idArtist);
+    creaCardPlayer(img, title, artist, idArtist, preview);
   });
 };
 
@@ -219,7 +225,7 @@ form.addEventListener("submit", event => {
   richiesta(payload);
 });
 
-const creaCardPlayer = (img, title, artist, idArtist) => {
+const creaCardPlayer = (img, title, artist, idArtist, preview) => {
   const col = document.querySelector("#cardPlayer");
   col.style.opacity = "1";
   col.innerHTML = `<div class="card bg-dark border-0">
@@ -246,4 +252,55 @@ const creaCardPlayer = (img, title, artist, idArtist) => {
     </div>
   </div>
 </div>`;
+
+  document.querySelector(".title-player").innerText = `${title}`;
+  // ottieni elementi HTML del player audio
+  const audio = document.createElement("audio");
+  const playBtn = document.querySelector(".iconaPlay");
+
+  // imposta file audio da riprodurre
+  audio.src = `${preview}`;
+
+  // gestisci l'evento clic sul pulsante di riproduzione
+  playBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.classList.remove("bi-play-fill");
+      playBtn.classList.add("bi-pause-fill");
+    } else {
+      audio.pause();
+      playBtn.classList.remove("bi-pause-fill");
+      playBtn.classList.add("bi-play-fill");
+    }
+  });
+
+  // gestisci l'evento di caricamento del file audio
+  audio.addEventListener("loadedmetadata", () => {
+    // imposta la durata dell'audio
+    const duration = audio.duration;
+    const minutes = Math.floor(duration / 60);
+    const seconds = Math.floor(duration % 60);
+    const durationString = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    document.querySelector(".duration").textContent = durationString;
+  });
+
+  // gestisci l'evento di avanzamento della riproduzione
+  audio.addEventListener("timeupdate", () => {
+    // imposta la posizione corrente dell'audio
+    const currentTime = audio.currentTime;
+    const minutes = Math.floor(currentTime / 60);
+    const seconds = Math.floor(currentTime % 60);
+    const currentTimeString = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    document.querySelector(".currentTime").textContent = currentTimeString;
+
+    // imposta la barra di avanzamento dell'audio
+    const progress = (currentTime / audio.duration) * 100;
+    document.querySelector(".progress-bar").style.width = `${progress}%`;
+  });
+
+  // gestisci l'evento di fine della riproduzione
+  audio.addEventListener("ended", () => {
+    playBtn.classList.remove("bi-pause-fill");
+    playBtn.classList.add("bi-play-fill");
+  });
 };
