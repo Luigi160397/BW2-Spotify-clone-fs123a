@@ -101,7 +101,11 @@
           </div>
         </div>
       </aside>
-      <div style="margin-top: 60px" id="contenuto" class="container-fluid bg-dark px-2 px-md-5 py-4 pt-0">
+      <div
+        style="margin-top: 60px; margin-bottom: 100px"
+        id="contenuto"
+        class="container-fluid bg-dark px-2 px-md-5 py-4 pt-0"
+      >
         <nav class="ps-5 navbar bg-dark position-fixed">
           <div class="container-fluid justify-content-start px-0">
             <a style="background-color: #131313; margin-right: 8px" class="text-light rounded-circle fs-3 px-2" href="#"
@@ -454,12 +458,18 @@
         style="bottom: 0; left: 0; right: 0; z-index: 99999"
         class="container-fluid position-fixed bg-dark py-3 px-4"
       >
-        <div class="row align-items-center justify-content-between">
-          <div class="col-2">
+        <div class="row align-items-center justify-content-center justify-content-md-between">
+          <div class="col-2 d-none d-md-block">
             <div class="card bg-dark border-0">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="assets/imgs/main/image-2.jpg" class="img-fluid rounded-0" alt="pic" />
+                  <img
+                    src="assets/imgs/main/image-2.jpg"
+                    width="100px"
+                    height="100px"
+                    class="img-fluid rounded-0"
+                    alt="pic"
+                  />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -474,22 +484,27 @@
               </div>
             </div>
           </div>
-          <div class="col-5">
-            <div class="container-fluid d-flex flex-column">
+          <div class="col-4">
+            <div class="container-fluid d-flex flex-md-column">
               <div class="align-self-center mb-4">
-                <button type="button" class="btn border-0 rounded-circle">
+                <button type="button" class="btn border-0 rounded-circle d-none d-md-inline-block">
                   <i class="bi bi-shuffle text-light fs-4 iconePlayer"></i>
                 </button>
-                <button type="button" class="btn border-0 rounded-circle">
+                <button type="button" class="btn border-0 rounded-circle d-none d-md-inline-block">
                   <i class="bi bi-skip-start-fill text-light fs-4 iconePlayer"></i>
                 </button>
+
+                <a style="vertical-align: middle" class="text-decoration-none text-light d-md-none fs-4" href="#"
+                  >Titolo</a
+                >
+
                 <button type="button" class="btn btn-secondary bg-white rounded-circle playerPlay">
-                  <i class="bi bi-play-fill text-dark fs-4"></i>
+                  <i class="bi bi-play-fill text-dark fs-4 iconaPlay"></i>
                 </button>
-                <button type="button" class="btn border-0 rounded-circle">
+                <button type="button" class="btn border-0 rounded-circle d-none d-md-inline-block">
                   <i class="bi bi-skip-end-fill text-light fs-4 iconePlayer"></i>
                 </button>
-                <button type="button" class="btn border-0 rounded-circle">
+                <button type="button" class="btn border-0 rounded-circle d-none d-md-inline-block">
                   <i class="bi bi-repeat text-light fs-4 iconePlayer"></i>
                 </button>
               </div>
@@ -508,7 +523,7 @@
               </div>
             </div>
           </div>
-          <div class="col-2">
+          <div class="col-2 d-none d-md-block">
             <div class="container-fluid d-flex align-items-center">
               <button type="button" class="btn border-0 rounded-circle">
                 <i class="bi bi-volume-down text-light fs-2 iconePlayer"></i>

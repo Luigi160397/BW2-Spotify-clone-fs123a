@@ -208,6 +208,7 @@ nav {
     height: 3px;
     overflow: hidden;
     -webkit-appearance: none;
+    appearance: none;
     background-color: #ababab;
   }
 
@@ -261,4 +262,15 @@ input[type="range"]::-moz-range-track {
   background-color: #004537;
   border-radius: 2px;
   position: absolute;
+}
+
+@media screen and (max-width: 767px) {
+  .playerPlay {
+    background-color: transparent !important;
+    border: 0;
+  }
+  .iconaPlay {
+    color: white !important;
+    font-size: 3rem !important;
+  }
 }
