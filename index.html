@@ -411,8 +411,10 @@
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h6 class="card-title text-light">Titolo</h6>
-                    <p class="card-text"><a class="text-decoration-none text-light" href="#">artista</a></p>
+                    <h6 id="titoloPlayer" class="card-title text-light">Titolo</h6>
+                    <p id="artistaPlayer" class="card-text">
+                      <a class="text-decoration-none text-light" href="#">artista</a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -447,7 +449,7 @@
                   aria-valuemax="100"
                   style="height: 3px"
                 >
-                  <div class="progress-bar bg-success" style="width: 40%"></div>
+                  <div class="progress-bar" style="width: 40%; background-color: #1db954 !important"></div>
                 </div>
               </div>
             </div>
@@ -457,16 +459,7 @@
               <button type="button" class="btn border-0 rounded-circle">
                 <i class="bi bi-volume-down text-light fs-2"></i>
               </button>
-              <input
-                type="range"
-                class="progress"
-                min="0"
-                max="100"
-                step="1"
-                value="50"
-                id="progressbar"
-                aria-label="Range"
-              />
+              <input type="range" class="form-range" id="customRange1" />
             </div>
           </div>
         </div>
