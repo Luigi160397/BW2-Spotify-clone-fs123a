@@ -283,4 +283,9 @@ input[type="range"]::-moz-range-track {
     color: white !important;
     font-size: 3rem !important;
   }
+
+  .iconaCuore {
+    color: white !important;
+    font-size: 2rem !important;
+  }
 }
