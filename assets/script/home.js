@@ -1,4 +1,5 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
+const audio = document.createElement("audio");
 
 window.onload = function () {
   richiesta(url);
@@ -265,7 +266,7 @@ const creaCardPlayer = (img, title, artist, idArtist, preview) => {
   document.querySelector(".title-player").style.opacity = "1";
   document.querySelector(".title-player").innerText = `${title}`;
   // ottieni elementi HTML del player audio
-  const audio = document.createElement("audio");
+
   const playBtn = document.querySelector(".iconaPlay");
 
   // imposta file audio da riprodurre
