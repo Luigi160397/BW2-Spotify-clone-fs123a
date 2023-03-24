@@ -1,11 +1,19 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
 const audio = document.createElement("audio");
 const volume = document.querySelector(".form-range");
+const iconaVolume = document.querySelector("#icona-volume");
 
 audio.volume = 0.5;
 
 volume.addEventListener("input", () => {
   audio.volume = volume.value / 100;
+  if (audio.volume === 0) {
+    iconaVolume.className = "bi bi-volume-off text-light fs-2 iconePlayer";
+  } else if (audio.volume > 0 && audio.volume < 1) {
+    iconaVolume.className = "bi bi-volume-down text-light fs-2 iconePlayer";
+  } else {
+    iconaVolume.className = "bi bi-volume-up text-light fs-2 iconePlayer";
+  }
 });
 
 window.onload = function () {
