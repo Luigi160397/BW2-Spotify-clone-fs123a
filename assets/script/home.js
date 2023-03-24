@@ -1,5 +1,12 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
 const audio = document.createElement("audio");
+const volume = document.querySelector(".form-range");
+
+audio.volume = 0.5;
+
+volume.addEventListener("input", () => {
+  audio.volume = volume.value / 100;
+});
 
 window.onload = function () {
   richiesta(url);
