@@ -271,6 +271,9 @@ const creaCardPlayer = (img, title, artist, idArtist, preview) => {
 
   // imposta file audio da riprodurre
   audio.src = `${preview}`;
+  audio.play();
+  playBtn.classList.remove("bi-play-fill");
+  playBtn.classList.add("bi-pause-fill");
 
   // gestisci l'evento clic sul pulsante di riproduzione
   playBtn.addEventListener("click", () => {
