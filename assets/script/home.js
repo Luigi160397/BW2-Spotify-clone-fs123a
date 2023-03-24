@@ -31,7 +31,8 @@ const richiesta = url => {
         canzoni[0].artist.name,
         canzoni[0].artist.id,
         canzoni[0].album.title,
-        canzoni[0].album.id
+        canzoni[0].album.id,
+        canzoni[0].preview
       );
       for (let i = 0; i < 6; i++) {
         const canzone = canzoni[i];
@@ -45,13 +46,21 @@ const richiesta = url => {
       }
       for (let i = 6; i < 10; i++) {
         const canzone = canzoni[i];
-        createCard(canzone.title, canzone.artist.picture_medium, canzone.artist.name, canzone.artist.id, canzone.id);
+        createCard(
+          canzone.title,
+          canzone.artist.picture_medium,
+          canzone.artist.name,
+          canzone.artist.id,
+          canzone.id,
+          canzone.preview
+        );
         createCard2(
           canzone.album.title,
           canzone.album.cover_medium,
           canzone.artist.name,
           canzone.album.id,
-          canzone.artist.id
+          canzone.artist.id,
+          canzone.preview
         );
       }
     })
@@ -88,7 +97,7 @@ const createCardPlaylist = (title, img, artist, idArtist, preview) => {
   });
 };
 
-const createCard = (title, img, artist, idArtist) => {
+const createCard = (title, img, artist, idArtist, preview) => {
   const row2 = document.querySelector(`#cards2`);
   const col2 = document.createElement("div");
   col2.setAttribute("class", "col");
@@ -122,7 +131,7 @@ const createCard = (title, img, artist, idArtist) => {
   </div>`;
 
   col2.addEventListener("click", () => {
-    creaCardPlayer(img, title, artist, idArtist);
+    creaCardPlayer(img, title, artist, idArtist, preview);
   });
 };
 
@@ -164,7 +173,7 @@ const createCard2 = (album, img, artist, idAlbum, idArtist) => {
   });
 };
 
-const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum) => {
+const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum, preview) => {
   const cardPrincipale = document.querySelector("#card-principale");
   cardPrincipale.innerHTML = `<div class="row g-0">
     <div class="col-2">
@@ -194,7 +203,7 @@ const createCardPrincipale = (title, img, artist, idArtist, album, idAlbum) => {
   </div>`;
 
   cardPrincipale.addEventListener("click", () => {
-    creaCardPlayer(img, title, artist, idArtist);
+    creaCardPlayer(img, title, artist, idArtist, preview);
   });
 };
 
@@ -295,7 +304,7 @@ const creaCardPlayer = (img, title, artist, idArtist, preview) => {
 
     // imposta la barra di avanzamento dell'audio
     const progress = (currentTime / audio.duration) * 100;
-    document.querySelector(".progress-bar").style.width = `${progress}%`;
+    document.querySelector(".progress-bar").style.width = `${progress}% !important`;
   });
 
   // gestisci l'evento di fine della riproduzione
