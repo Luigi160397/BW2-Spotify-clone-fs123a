@@ -2,6 +2,7 @@ const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
 const audio = document.createElement("audio");
 const volume = document.querySelector(".form-range");
 const iconaVolume = document.querySelector("#icona-volume");
+const progress = document.querySelector(".progress-bar");
 
 audio.volume = 0.5;
 
@@ -14,6 +15,20 @@ volume.addEventListener("input", () => {
   } else {
     iconaVolume.className = "bi bi-volume-up text-light fs-2 iconePlayer";
   }
+});
+
+iconaVolume.addEventListener("click", () => {
+  iconaVolume.className = "bi bi-volume-mute text-light fs-2 iconePlayer";
+  audio.volume = 0;
+});
+
+// Aggiorna la progress bar durante la riproduzione
+audio.addEventListener("timeupdate", () => {
+  // Calcola la percentuale di avanzamento della canzone
+  const progressPercent = (audio.currentTime / audio.duration) * 100;
+
+  // Aggiorna la larghezza della progress bar
+  progress.style.width = `${progressPercent}%`;
 });
 
 window.onload = function () {
@@ -299,30 +314,6 @@ const creaCardPlayer = (img, title, artist, idArtist, preview) => {
       playBtn.classList.remove("bi-pause-fill");
       playBtn.classList.add("bi-play-fill");
     }
-  });
-
-  // gestisci l'evento di caricamento del file audio
-  audio.addEventListener("loadedmetadata", () => {
-    // imposta la durata dell'audio
-    const duration = audio.duration;
-    const minutes = Math.floor(duration / 60);
-    const seconds = Math.floor(duration % 60);
-    const durationString = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-    document.querySelector(".duration").textContent = durationString;
-  });
-
-  // gestisci l'evento di avanzamento della riproduzione
-  audio.addEventListener("timeupdate", () => {
-    // imposta la posizione corrente dell'audio
-    const currentTime = audio.currentTime;
-    const minutes = Math.floor(currentTime / 60);
-    const seconds = Math.floor(currentTime % 60);
-    const currentTimeString = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-    document.querySelector(".currentTime").textContent = currentTimeString;
-
-    // imposta la barra di avanzamento dell'audio
-    const progress = (currentTime / audio.duration) * 100;
-    document.querySelector(".progress-bar").style.width = `${progress}% !important`;
   });
 
   // gestisci l'evento di fine della riproduzione

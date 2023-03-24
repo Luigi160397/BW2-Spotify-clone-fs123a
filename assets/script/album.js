@@ -3,6 +3,38 @@ const id = queryParams.get("id");
 
 const payload = `https://striveschool-api.herokuapp.com/api/deezer/album/${id}`;
 
+const audio = document.createElement("audio");
+const volume = document.querySelector(".form-range");
+const iconaVolume = document.querySelector("#icona-volume");
+const progress = document.querySelector(".progress-bar");
+
+audio.volume = 0.5;
+
+volume.addEventListener("input", () => {
+  audio.volume = volume.value / 100;
+  if (audio.volume === 0) {
+    iconaVolume.className = "bi bi-volume-off text-light fs-2 iconePlayer";
+  } else if (audio.volume > 0 && audio.volume < 1) {
+    iconaVolume.className = "bi bi-volume-down text-light fs-2 iconePlayer";
+  } else {
+    iconaVolume.className = "bi bi-volume-up text-light fs-2 iconePlayer";
+  }
+});
+
+iconaVolume.addEventListener("click", () => {
+  iconaVolume.className = "bi bi-volume-mute text-light fs-2 iconePlayer";
+  audio.volume = 0;
+});
+
+// Aggiorna la progress bar durante la riproduzione
+audio.addEventListener("timeupdate", () => {
+  // Calcola la percentuale di avanzamento della canzone
+  const progressPercent = (audio.currentTime / audio.duration) * 100;
+
+  // Aggiorna la larghezza della progress bar
+  progress.style.width = `${progressPercent}%`;
+});
+
 window.onload = () => {
   richiesta(payload);
 };
@@ -46,7 +78,8 @@ const richiesta = url => {
           min,
           sec,
           canzone.artist.id,
-          canzone.album.cover_medium
+          canzone.album.cover_medium,
+          canzone.preview
         );
       }
 
@@ -115,7 +148,7 @@ const createCardPrincipale = (imgCard, imgArtist, album, artist, anno, brani, mi
 };
 
 let i = 1;
-const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist, img) => {
+const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist, img, preview) => {
   const row = document.querySelector("#row-canzoni");
   const div = document.createElement("div");
   div.id = "riga";
@@ -142,7 +175,7 @@ const creaCanzone = (title, artist, riproduzioni, min, sec, idArtist, img) => {
   i++;
 
   div.onclick = function () {
-    creaCardPlayer(img, title, artist, idArtist);
+    creaCardPlayer(img, title, artist, idArtist, preview);
   };
 };
 
@@ -150,9 +183,8 @@ const apriCerca = () => {
   window.location.href = "index.html?form=1";
 };
 
-const creaCardPlayer = (img, title, artist, idArtist) => {
+const creaCardPlayer = (img, title, artist, idArtist, preview) => {
   const col = document.querySelector("#cardPlayer");
-
   col.style.opacity = "1";
   col.innerHTML = `<div class="card bg-dark border-0">
   <div class="row g-0">
@@ -178,6 +210,35 @@ const creaCardPlayer = (img, title, artist, idArtist) => {
     </div>
   </div>
 </div>`;
+
   document.querySelector(".title-player").style.opacity = "1";
   document.querySelector(".title-player").innerText = `${title}`;
+  // ottieni elementi HTML del player audio
+
+  const playBtn = document.querySelector(".iconaPlay");
+
+  // imposta file audio da riprodurre
+  audio.src = `${preview}`;
+  audio.play();
+  playBtn.classList.remove("bi-play-fill");
+  playBtn.classList.add("bi-pause-fill");
+
+  // gestisci l'evento clic sul pulsante di riproduzione
+  playBtn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.classList.remove("bi-play-fill");
+      playBtn.classList.add("bi-pause-fill");
+    } else {
+      audio.pause();
+      playBtn.classList.remove("bi-pause-fill");
+      playBtn.classList.add("bi-play-fill");
+    }
+  });
+
+  // gestisci l'evento di fine della riproduzione
+  audio.addEventListener("ended", () => {
+    playBtn.classList.remove("bi-pause-fill");
+    playBtn.classList.add("bi-play-fill");
+  });
 };
