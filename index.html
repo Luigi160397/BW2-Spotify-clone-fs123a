@@ -117,15 +117,19 @@
             <a style="background-color: #131313" class="text-light rounded-circle fs-3 px-2" href="#"
               ><i class="bi bi-arrow-right-short d-none d-md-block"></i
             ></a>
-            <form style="display: none" id="form-input" class="px-2" role="search">
+            <form style="display: none" id="form-input" class="px-2 position-relative" role="search">
               <input
                 id="input-search"
-                style="width: 200px"
+                style="width: 200px; padding-left: 40px"
                 class="form-control me-2 rounded-pill"
                 type="search"
                 placeholder="Cerca"
                 aria-label="Search"
               />
+              <i
+                style="left: 15px; top: 0; z-index: 99999"
+                class="bi bi-search fs-4 text-decoration-none text-black position-absolute"
+              ></i>
             </form>
           </div>
         </nav>
