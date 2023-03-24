@@ -192,5 +192,6 @@ const creaCardPlayer = (img, title, artist, idArtist) => {
     </div>
   </div>
 </div>`;
+  document.querySelector(".title-player").style.opacity = "1";
   document.querySelector(".title-player").innerText = `${title}`;
 };
