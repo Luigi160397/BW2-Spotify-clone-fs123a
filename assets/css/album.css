@@ -265,3 +265,26 @@ input[type="range"]::-moz-range-track {
     font-size: 2rem !important;
   }
 }
+
+.title-player {
+  display: inline-block;
+  animation: scroll 5s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
