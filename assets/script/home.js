@@ -52,7 +52,6 @@ const richiesta = url => {
           canzone.artist.picture_medium,
           canzone.artist.name,
           canzone.artist.id,
-          canzone.id,
           canzone.preview
         );
         createCard2(
@@ -60,8 +59,7 @@ const richiesta = url => {
           canzone.album.cover_medium,
           canzone.artist.name,
           canzone.album.id,
-          canzone.artist.id,
-          canzone.preview
+          canzone.artist.id
         );
       }
     })
