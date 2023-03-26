@@ -3,6 +3,7 @@ const audio = document.createElement("audio");
 const volume = document.querySelector(".form-range");
 const iconaVolume = document.querySelector("#icona-volume");
 const progress = document.querySelector(".progress-bar");
+const playBtn = document.querySelector(".iconaPlay");
 
 audio.volume = 0.5;
 
@@ -29,6 +30,25 @@ audio.addEventListener("timeupdate", () => {
 
   // Aggiorna la larghezza della progress bar
   progress.style.width = `${progressPercent}%`;
+});
+
+// gestisci l'evento clic sul pulsante di riproduzione
+playBtn.addEventListener("click", () => {
+  if (audio.paused) {
+    audio.play();
+    playBtn.classList.remove("bi-play-fill");
+    playBtn.classList.add("bi-pause-fill");
+  } else {
+    audio.pause();
+    playBtn.classList.remove("bi-pause-fill");
+    playBtn.classList.add("bi-play-fill");
+  }
+});
+
+// gestisci l'evento di fine della riproduzione
+audio.addEventListener("ended", () => {
+  playBtn.classList.remove("bi-pause-fill");
+  playBtn.classList.add("bi-play-fill");
 });
 
 window.onload = function () {
@@ -302,23 +322,4 @@ const creaCardPlayer = (img, title, artist, idArtist, preview) => {
   audio.play();
   playBtn.classList.remove("bi-play-fill");
   playBtn.classList.add("bi-pause-fill");
-
-  // gestisci l'evento clic sul pulsante di riproduzione
-  playBtn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play();
-      playBtn.classList.remove("bi-play-fill");
-      playBtn.classList.add("bi-pause-fill");
-    } else {
-      audio.pause();
-      playBtn.classList.remove("bi-pause-fill");
-      playBtn.classList.add("bi-play-fill");
-    }
-  });
-
-  // gestisci l'evento di fine della riproduzione
-  audio.addEventListener("ended", () => {
-    playBtn.classList.remove("bi-pause-fill");
-    playBtn.classList.add("bi-play-fill");
-  });
 };
